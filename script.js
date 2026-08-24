@@ -34,6 +34,18 @@ function setActive(index, playNow) {
   npPlay.textContent = isPlaying ? '⏸' : '▶';
   nowPlaying.classList.toggle('playing', isPlaying);
   renderThumb();
+  syncCardButtons();
+}
+
+// keep every per-card play button in sync with what's actually playing,
+// so there's one shared state instead of two controls that can disagree
+function syncCardButtons() {
+  stops.forEach((stop, i) => {
+    const chip = stop.querySelector('.play-chip');
+    const active = i === currentIndex;
+    chip.classList.toggle('is-active', active && isPlaying);
+    chip.textContent = active && isPlaying ? '⏸' : '▶';
+  });
 }
 
 // --- transport controls ---
@@ -51,9 +63,15 @@ document.getElementById('npNext').addEventListener('click', () => {
   stops[i].scrollIntoView({ behavior: 'smooth' });
 });
 
-// --- per-section play buttons ---
+// --- per-section play buttons: click toggles if it's the current song, otherwise jumps to it ---
 stops.forEach((stop, index) => {
-  stop.querySelector('.play-chip').addEventListener('click', () => setActive(index, true));
+  stop.querySelector('.play-chip').addEventListener('click', () => {
+    if (index === currentIndex) {
+      setActive(index, !isPlaying);
+    } else {
+      setActive(index, true);
+    }
+  });
 });
 
 // initial idle state: first stop cued, not playing
@@ -99,3 +117,18 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.6 });
 
 stops.forEach(stop => observer.observe(stop));
+
+// --- atlas region filter ---
+const filterChips = document.querySelectorAll('.filter-chip');
+const atlasRegions = document.querySelectorAll('.atlas-region');
+filterChips.forEach(chip => {
+  chip.addEventListener('click', () => {
+    filterChips.forEach(c => c.classList.remove('is-active'));
+    chip.classList.add('is-active');
+    const filter = chip.dataset.filter;
+    atlasRegions.forEach(region => {
+      const match = filter === 'All' || region.dataset.region === filter;
+      region.classList.toggle('is-hidden', !match);
+    });
+  });
+});
