@@ -98,17 +98,18 @@ section {
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  filter: grayscale(1) contrast(1.5) brightness(1.3);
+  filter: saturate(0.5) contrast(1.25) brightness(1.05);
   transform: scale(1.02);
 }
 
-/* duotone poster treatment: grayscale photo -> multiply with near-black (shadows) -> screen with accent (highlights) */
+/* duotone poster wash: keeps the photo readable, colors it toward near-black shadows / accent highlights */
 .duo-shadow {
   position: absolute;
   inset: 0;
   z-index: 1;
   background: #120b06;
   mix-blend-mode: multiply;
+  opacity: 0.4;
 }
 
 .duo-highlight {
@@ -117,6 +118,7 @@ section {
   z-index: 1;
   background: var(--accent, var(--gold));
   mix-blend-mode: screen;
+  opacity: 0.3;
 }
 
 .scrim {
@@ -192,6 +194,31 @@ section {
 .stop-inner.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.landmark-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 14px 4px 4px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(246, 236, 217, 0.2);
+  backdrop-filter: blur(6px);
+}
+
+.landmark-chip img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.landmark-chip span {
+  font-size: 0.76rem;
+  color: var(--cream-dim);
+  letter-spacing: 0.02em;
 }
 
 .stop h2 {
