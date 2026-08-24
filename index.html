@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mithai Mile — India's Sweet Shop Playlist</title>
-<meta name="description" content="Land on a city, hear its sweet's song. Eleven stops, one song each, and the full 100-sweet atlas underneath.">
+<meta name="description" content="Land on a city, hear its sweet's song, and the history and places to visit alongside it. Plus the full 100-sweet atlas underneath.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍡</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,27 +12,6 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<svg class="filter-defs" aria-hidden="true">
-  <defs>
-    <filter id="posterize" x="-5%" y="-5%" width="110%" height="110%">
-      <feColorMatrix type="saturate" values="1.6"/>
-      <feComponentTransfer>
-        <feFuncR type="discrete" tableValues="0.06 0.26 0.48 0.7 0.88 1"/>
-        <feFuncG type="discrete" tableValues="0.06 0.26 0.48 0.7 0.88 1"/>
-        <feFuncB type="discrete" tableValues="0.06 0.26 0.48 0.7 0.88 1"/>
-      </feComponentTransfer>
-    </filter>
-    <filter id="posterize-lite" x="-5%" y="-5%" width="110%" height="110%">
-      <feColorMatrix type="saturate" values="1.3"/>
-      <feComponentTransfer>
-        <feFuncR type="discrete" tableValues="0.1 0.35 0.6 0.85 1"/>
-        <feFuncG type="discrete" tableValues="0.1 0.35 0.6 0.85 1"/>
-        <feFuncB type="discrete" tableValues="0.1 0.35 0.6 0.85 1"/>
-      </feComponentTransfer>
-    </filter>
-  </defs>
-</svg>
 
 <div class="film-grain" aria-hidden="true"></div>
 
@@ -43,157 +22,898 @@
 
 <main class="stage">
     <div class="scene is-active" data-index="0" style="--accent:#f2b23c">
-      <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Rasmalai1.jpg/500px-Rasmalai1.jpg" alt="Rasmalai, a Bengali sweet of milk dumplings in thickened milk">
-      <div class="scene-shadow" aria-hidden="true"></div>
-      <div class="scene-tint" aria-hidden="true"></div>
-      <div class="scene-scrim" aria-hidden="true"></div>
-      <div class="scene-content">
-        <div class="scene-landmark"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Howrah_Bridge.jpg/500px-Howrah_Bridge.jpg" alt="Howrah Bridge, Kolkata, West Bengal" loading="lazy"><span>Howrah Bridge</span></div>
-        <p class="scene-eyebrow">Kolkata, West Bengal</p>
-        <h1 class="scene-title">Rasgulla &amp; Rasmalai</h1>
-        <p class="scene-note">Spongy chhena balls dunked in sugar syrup or slow-thickened milk, the pride of every mishti shop on the block.</p>
-        <p class="scene-credit"><strong>Ekla Cholo Re</strong> — Rabindranath Tagore, sung by Anupam Roy</p>
-        <button class="scene-play" data-video-id="i5hQ6yBfZRE" aria-label="Play this song">&#9654;</button>
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Rasmalai1.jpg/500px-Rasmalai1.jpg" alt="Rasmalai, a Bengali sweet of milk dumplings in thickened milk">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Kolkata, West Bengal</p>
+          <h1 class="scene-title">Rasgulla &amp; Rasmalai</h1>
+          <p class="scene-note">Spongy chhena balls dunked in sugar syrup or slow-thickened milk, the pride of every mishti shop on the block.</p>
+          <p class="scene-credit"><strong>Ekla Cholo Re</strong> — Rabindranath Tagore, sung by Anupam Roy</p>
+          <button class="scene-play" data-video-id="i5hQ6yBfZRE" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Howrah_Bridge.jpg/500px-Howrah_Bridge.jpg" alt="Howrah Bridge, Kolkata, West Bengal" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Howrah Bridge</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Grew from villages the British East India Company acquired in the 1690s into the capital of British India until 1911, and remains Bengal's cultural capital, home to Tagore and Ray.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Victoria Memorial</li>
+            <li>Howrah Bridge</li>
+            <li>Park Street</li>
+            <li>Dakshineswar Kali Temple</li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="scene" data-index="1" style="--accent:#e0b23a">
-      <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Paneer_ghevar.jpg/500px-Paneer_ghevar.jpg" alt="Ghevar, a honeycombed Rajasthani sweet disc">
-      <div class="scene-shadow" aria-hidden="true"></div>
-      <div class="scene-tint" aria-hidden="true"></div>
-      <div class="scene-scrim" aria-hidden="true"></div>
-      <div class="scene-content">
-        <div class="scene-landmark"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Hawa_Mahal_2011.jpg/500px-Hawa_Mahal_2011.jpg" alt="Hawa Mahal, Jaipur, Rajasthan" loading="lazy"><span>Hawa Mahal</span></div>
-        <p class="scene-eyebrow">Jaipur, Rajasthan</p>
-        <h1 class="scene-title">Ghevar</h1>
-        <p class="scene-note">A disc of fried batter honeycombed with air pockets, soaked in syrup and made only for Teej, exactly when this song is sung.</p>
-        <p class="scene-credit"><strong>Kesariya Balam Aavo Ni</strong> — Rajasthani folk, sung by Sarita Kharwal</p>
-        <button class="scene-play" data-video-id="gMVEIxzmIiU" aria-label="Play this song">&#9654;</button>
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Paneer_ghevar.jpg/500px-Paneer_ghevar.jpg" alt="Ghevar, a honeycombed Rajasthani sweet disc">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Jaipur, Rajasthan</p>
+          <h1 class="scene-title">Ghevar</h1>
+          <p class="scene-note">A disc of fried batter honeycombed with air pockets, soaked in syrup and made only for Teej, exactly when this song is sung.</p>
+          <p class="scene-credit"><strong>Kesariya Balam Aavo Ni</strong> — Rajasthani folk, sung by Sarita Kharwal</p>
+          <button class="scene-play" data-video-id="gMVEIxzmIiU" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Hawa_Mahal_2011.jpg/500px-Hawa_Mahal_2011.jpg" alt="Hawa Mahal, Jaipur, Rajasthan" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Hawa Mahal</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Founded in 1727 by Maharaja Sawai Jai Singh II as one of India's first planned cities, laid out on Vastu Shastra principles. Its pink-painted buildings gave it the nickname ‘Pink City.’</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Hawa Mahal</li>
+            <li>Amber Fort</li>
+            <li>City Palace</li>
+            <li>Jantar Mantar</li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="scene" data-index="2" style="--accent:#e2603a">
-      <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Motichur_ka_laddu.JPG/500px-Motichur_ka_laddu.JPG" alt="Motichoor ladoo, a Delhi sweet of fried gram-flour pearls">
-      <div class="scene-shadow" aria-hidden="true"></div>
-      <div class="scene-tint" aria-hidden="true"></div>
-      <div class="scene-scrim" aria-hidden="true"></div>
-      <div class="scene-content">
-        <div class="scene-landmark"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Red-Fort,Delhi.JPG/500px-Red-Fort,Delhi.JPG" alt="Red Fort, Delhi" loading="lazy"><span>Red Fort</span></div>
-        <p class="scene-eyebrow">Delhi</p>
-        <h1 class="scene-title">Ladoo</h1>
-        <p class="scene-note">Besan, boondi, or motichoor, hand-rolled outside every Chandni Chowk mithai shop. The default sweet for good news.</p>
-        <p class="scene-credit"><strong>Dilli Wali Girlfriend</strong> — Yeh Jawaani Hai Deewani, Arijit Singh &amp; Sunidhi Chauhan</p>
-        <button class="scene-play" data-video-id="4QzmXuOghtU" aria-label="Play this song">&#9654;</button>
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Motichur_ka_laddu.JPG/500px-Motichur_ka_laddu.JPG" alt="Motichoor ladoo, a Delhi sweet of fried gram-flour pearls">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Delhi</p>
+          <h1 class="scene-title">Ladoo</h1>
+          <p class="scene-note">Besan, boondi, or motichoor, hand-rolled outside every Chandni Chowk mithai shop. The default sweet for good news.</p>
+          <p class="scene-credit"><strong>Dilli Wali Girlfriend</strong> — Yeh Jawaani Hai Deewani, Arijit Singh &amp; Sunidhi Chauhan</p>
+          <button class="scene-play" data-video-id="4QzmXuOghtU" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Red-Fort,Delhi.JPG/500px-Red-Fort,Delhi.JPG" alt="Red Fort, Delhi" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Red Fort</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Delhi has served as the capital of several historical empires, from the Delhi Sultanate through the Mughals to British India. The Red Fort was the seat of Mughal power for over 200 years.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Red Fort</li>
+            <li>Qutub Minar</li>
+            <li>India Gate</li>
+            <li>Chandni Chowk</li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="scene" data-index="3" style="--accent:#d97b3f">
-      <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Petha-from-Agra.JPG/500px-Petha-from-Agra.JPG" alt="Petha, translucent candied ash-gourd cubes from Agra">
-      <div class="scene-shadow" aria-hidden="true"></div>
-      <div class="scene-tint" aria-hidden="true"></div>
-      <div class="scene-scrim" aria-hidden="true"></div>
-      <div class="scene-content">
-        <div class="scene-landmark"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Taj_Mahal,_Agra,_India.jpg/500px-Taj_Mahal,_Agra,_India.jpg" alt="Taj Mahal, Agra, Uttar Pradesh" loading="lazy"><span>Taj Mahal</span></div>
-        <p class="scene-eyebrow">Agra, Uttar Pradesh</p>
-        <h1 class="scene-title">Petha</h1>
-        <p class="scene-note">Translucent ash-gourd cubes candied in sugar syrup, sold outside the Taj since the Mughal era.</p>
-        <p class="scene-credit"><strong>Pyar Kiya Toh Darna Kya</strong> — Mughal-E-Azam, Lata Mangeshkar</p>
-        <button class="scene-play" data-video-id="dRLJ15dXbEk" aria-label="Play this song">&#9654;</button>
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Petha-from-Agra.JPG/500px-Petha-from-Agra.JPG" alt="Petha, translucent candied ash-gourd cubes from Agra">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Agra, Uttar Pradesh</p>
+          <h1 class="scene-title">Petha</h1>
+          <p class="scene-note">Translucent ash-gourd cubes candied in sugar syrup, sold outside the Taj since the Mughal era.</p>
+          <p class="scene-credit"><strong>Pyar Kiya Toh Darna Kya</strong> — Mughal-E-Azam, Lata Mangeshkar</p>
+          <button class="scene-play" data-video-id="dRLJ15dXbEk" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Taj_Mahal,_Agra,_India.jpg/500px-Taj_Mahal,_Agra,_India.jpg" alt="Taj Mahal, Agra, Uttar Pradesh" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Taj Mahal</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Capital of the Mughal Empire under Akbar and Jahangir, Agra reached its architectural peak when Shah Jahan built the Taj Mahal as a tomb for his wife Mumtaz Mahal.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Taj Mahal</li>
+            <li>Agra Fort</li>
+            <li>Fatehpur Sikri</li>
+            <li>Mehtab Bagh</li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="scene" data-index="4" style="--accent:#d1483f">
-      <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Malaiyo.jpg/500px-Malaiyo.jpg" alt="Malaiyo, whipped milk-foam sweet from Varanasi's winter mornings">
-      <div class="scene-shadow" aria-hidden="true"></div>
-      <div class="scene-tint" aria-hidden="true"></div>
-      <div class="scene-scrim" aria-hidden="true"></div>
-      <div class="scene-content">
-        <div class="scene-landmark"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Dashashwamedha_ghat_on_the_Ganga,_Varanasi.jpg/500px-Dashashwamedha_ghat_on_the_Ganga,_Varanasi.jpg" alt="Dashashwamedh Ghat, Varanasi, Uttar Pradesh" loading="lazy"><span>Dashashwamedh Ghat</span></div>
-        <p class="scene-eyebrow">Varanasi, Uttar Pradesh</p>
-        <h1 class="scene-title">Malaiyo</h1>
-        <p class="scene-note">Whipped, dew-set milk foam sold only on winter mornings on the ghats. Dissolves before it fully lands on the tongue.</p>
-        <p class="scene-credit"><strong>Banarasiya</strong> — Raanjhanaa, A.R. Rahman &amp; Shreya Ghoshal</p>
-        <button class="scene-play" data-video-id="-ydFM29TPnQ" aria-label="Play this song">&#9654;</button>
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Malaiyo.jpg/500px-Malaiyo.jpg" alt="Malaiyo, whipped milk-foam sweet from Varanasi's winter mornings">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Varanasi, Uttar Pradesh</p>
+          <h1 class="scene-title">Malaiyo</h1>
+          <p class="scene-note">Whipped, dew-set milk foam sold only on winter mornings on the ghats. Dissolves before it fully lands on the tongue.</p>
+          <p class="scene-credit"><strong>Banarasiya</strong> — Raanjhanaa, A.R. Rahman &amp; Shreya Ghoshal</p>
+          <button class="scene-play" data-video-id="-ydFM29TPnQ" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Dashashwamedha_ghat_on_the_Ganga,_Varanasi.jpg/500px-Dashashwamedha_ghat_on_the_Ganga,_Varanasi.jpg" alt="Dashashwamedh Ghat, Varanasi, Uttar Pradesh" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Dashashwamedh Ghat</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>One of the oldest continuously inhabited cities in the world, Varanasi (Kashi) has been a center of Hindu learning and pilgrimage on the Ganges for millennia.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Dashashwamedh Ghat</li>
+            <li>Kashi Vishwanath Temple</li>
+            <li>Sarnath</li>
+            <li>Manikarnika Ghat</li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="scene" data-index="5" style="--accent:#c23e3e">
-      <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Pinni_cropped.JPG/500px-Pinni_cropped.JPG" alt="Pinni, a Punjabi winter sweet of wheat, ghee and nuts">
-      <div class="scene-shadow" aria-hidden="true"></div>
-      <div class="scene-tint" aria-hidden="true"></div>
-      <div class="scene-scrim" aria-hidden="true"></div>
-      <div class="scene-content">
-        <div class="scene-landmark"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Golden_Temple_reflecting_in_the_Sarovar,_Amritsar.jpg/500px-Golden_Temple_reflecting_in_the_Sarovar,_Amritsar.jpg" alt="Golden Temple, Amritsar, Punjab" loading="lazy"><span>Golden Temple</span></div>
-        <p class="scene-eyebrow">Amritsar, Punjab</p>
-        <h1 class="scene-title">Pinni</h1>
-        <p class="scene-note">Whole wheat, ghee, and nuts rolled into a dense winter ladoo, packed into every tiffin a Punjabi son takes leaving home.</p>
-        <p class="scene-credit"><strong>Laung Laachi</strong> — title track, sung by Mannat Noor</p>
-        <button class="scene-play" data-video-id="YpkJO_GrCo0" aria-label="Play this song">&#9654;</button>
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Pinni_cropped.JPG/500px-Pinni_cropped.JPG" alt="Pinni, a Punjabi winter sweet of wheat, ghee and nuts">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Amritsar, Punjab</p>
+          <h1 class="scene-title">Pinni</h1>
+          <p class="scene-note">Whole wheat, ghee, and nuts rolled into a dense winter ladoo, packed into every tiffin a Punjabi son takes leaving home.</p>
+          <p class="scene-credit"><strong>Laung Laachi</strong> — title track, sung by Mannat Noor</p>
+          <button class="scene-play" data-video-id="YpkJO_GrCo0" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Golden_Temple_reflecting_in_the_Sarovar,_Amritsar.jpg/500px-Golden_Temple_reflecting_in_the_Sarovar,_Amritsar.jpg" alt="Golden Temple, Amritsar, Punjab" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Golden Temple</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Founded in 1577 by the fourth Sikh Guru, Guru Ram Das, around a sacred pool. The Golden Temple built at its center makes Amritsar the spiritual home of Sikhism.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Golden Temple</li>
+            <li>Jallianwala Bagh</li>
+            <li>Wagah Border</li>
+            <li>Partition Museum</li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="scene" data-index="6" style="--accent:#f0ad3f">
-      <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Mysore_pak.jpg/500px-Mysore_pak.jpg" alt="Mysore Pak, a ghee and gram-flour sweet from the Mysore Palace kitchen">
-      <div class="scene-shadow" aria-hidden="true"></div>
-      <div class="scene-tint" aria-hidden="true"></div>
-      <div class="scene-scrim" aria-hidden="true"></div>
-      <div class="scene-content">
-        <div class="scene-landmark"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Mysore_Palace_Mysore.jpg/500px-Mysore_Palace_Mysore.jpg" alt="Mysore Palace, Mysore, Karnataka" loading="lazy"><span>Mysore Palace</span></div>
-        <p class="scene-eyebrow">Mysore, Karnataka</p>
-        <h1 class="scene-title">Mysore Pak</h1>
-        <p class="scene-note">Ghee, gram flour, and sugar, invented in the Mysore Palace kitchen in the 1930s and never bettered since.</p>
-        <p class="scene-credit"><strong>Belageddu</strong> — Kirik Party, sung by Vijay Prakash</p>
-        <button class="scene-play" data-video-id="ebz20FHrT44" aria-label="Play this song">&#9654;</button>
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Mysore_pak.jpg/500px-Mysore_pak.jpg" alt="Mysore Pak, a ghee and gram-flour sweet from the Mysore Palace kitchen">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Mysore, Karnataka</p>
+          <h1 class="scene-title">Mysore Pak</h1>
+          <p class="scene-note">Ghee, gram flour, and sugar, invented in the Mysore Palace kitchen in the 1930s and never bettered since.</p>
+          <p class="scene-credit"><strong>Belageddu</strong> — Kirik Party, sung by Vijay Prakash</p>
+          <button class="scene-play" data-video-id="ebz20FHrT44" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Mysore_Palace_Mysore.jpg/500px-Mysore_Palace_Mysore.jpg" alt="Mysore Palace, Mysore, Karnataka" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Mysore Palace</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Capital of the Kingdom of Mysore under the Wodeyar dynasty for centuries, the city is famed for its Dussehra celebrations and Indo-Saracenic architecture.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Mysore Palace</li>
+            <li>Chamundi Hills</li>
+            <li>Brindavan Gardens</li>
+            <li>St. Philomena's Church</li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="scene" data-index="7" style="--accent:#e0577a">
-      <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Double_Ka_Meetha.JPG/500px-Double_Ka_Meetha.JPG" alt="Double Ka Meetha, a Hyderabadi bread pudding in saffron milk">
-      <div class="scene-shadow" aria-hidden="true"></div>
-      <div class="scene-tint" aria-hidden="true"></div>
-      <div class="scene-scrim" aria-hidden="true"></div>
-      <div class="scene-content">
-        <div class="scene-landmark"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Charminar_Hyderabad_1.jpg/500px-Charminar_Hyderabad_1.jpg" alt="Charminar, Hyderabad, Telangana" loading="lazy"><span>Charminar</span></div>
-        <p class="scene-eyebrow">Hyderabad, Telangana</p>
-        <h1 class="scene-title">Double Ka Meetha</h1>
-        <p class="scene-note">Fried bread soaked in saffron milk and topped with dry fruits, the Nizami answer to bread pudding.</p>
-        <p class="scene-credit"><strong>Naatu Naatu</strong> — RRR, Rahul Sipligunj &amp; Kaala Bhairava</p>
-        <button class="scene-play" data-video-id="4_eEgJhsBMo" aria-label="Play this song">&#9654;</button>
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Double_Ka_Meetha.JPG/500px-Double_Ka_Meetha.JPG" alt="Double Ka Meetha, a Hyderabadi bread pudding in saffron milk">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Hyderabad, Telangana</p>
+          <h1 class="scene-title">Double Ka Meetha</h1>
+          <p class="scene-note">Fried bread soaked in saffron milk and topped with dry fruits, the Nizami answer to bread pudding.</p>
+          <p class="scene-credit"><strong>Naatu Naatu</strong> — RRR, Rahul Sipligunj &amp; Kaala Bhairava</p>
+          <button class="scene-play" data-video-id="4_eEgJhsBMo" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Charminar_Hyderabad_1.jpg/500px-Charminar_Hyderabad_1.jpg" alt="Charminar, Hyderabad, Telangana" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Charminar</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Founded in 1591 by Muhammad Quli Qutb Shah, Hyderabad later became the seat of the Nizams, among the wealthiest rulers in the world, blending Deccani, Persian, and Qutb Shahi influences.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Charminar</li>
+            <li>Golconda Fort</li>
+            <li>Chowmahalla Palace</li>
+            <li>Hussain Sagar</li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="scene" data-index="8" style="--accent:#b3703f">
-      <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Tirunelveli_halwa.jpg/500px-Tirunelveli_halwa.jpg" alt="Tirunelveli halwa, a wheat halwa first sold in the dark">
-      <div class="scene-shadow" aria-hidden="true"></div>
-      <div class="scene-tint" aria-hidden="true"></div>
-      <div class="scene-scrim" aria-hidden="true"></div>
-      <div class="scene-content">
-        <div class="scene-landmark"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Tirunelveli_Nellaiappar_Temple_1.jpg/500px-Tirunelveli_Nellaiappar_Temple_1.jpg" alt="Nellaiappar Temple, Tirunelveli, Tamil Nadu" loading="lazy"><span>Nellaiappar Temple</span></div>
-        <p class="scene-eyebrow">Tirunelveli, Tamil Nadu</p>
-        <h1 class="scene-title">Iruttukadai Halwa</h1>
-        <p class="scene-note">Wheat halwa first sold in the dark ("iruttu") because the shop had no electricity. The name outlived the blackout by a century.</p>
-        <p class="scene-credit"><strong>Rowdy Baby</strong> — Maari 2, Dhanush &amp; Dhee</p>
-        <button class="scene-play" data-video-id="x6Q7c9RyMzk" aria-label="Play this song">&#9654;</button>
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Tirunelveli_halwa.jpg/500px-Tirunelveli_halwa.jpg" alt="Tirunelveli halwa, a wheat halwa first sold in the dark">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Tirunelveli, Tamil Nadu</p>
+          <h1 class="scene-title">Iruttukadai Halwa</h1>
+          <p class="scene-note">Wheat halwa first sold in the dark ("iruttu") because the shop had no electricity. The name outlived the blackout by a century.</p>
+          <p class="scene-credit"><strong>Rowdy Baby</strong> — Maari 2, Dhanush &amp; Dhee</p>
+          <button class="scene-play" data-video-id="x6Q7c9RyMzk" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Tirunelveli_Nellaiappar_Temple_1.jpg/500px-Tirunelveli_Nellaiappar_Temple_1.jpg" alt="Nellaiappar Temple, Tirunelveli, Tamil Nadu" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Nellaiappar Temple</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>One of the oldest cities in Tamil Nadu, sitting on the Thamirabarani river, taking its name from the Nellaiappar Temple.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Nellaiappar Temple</li>
+            <li>Courtallam Falls</li>
+            <li>Manimuthar Falls</li>
+            <li>Papanasam</li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="scene" data-index="9" style="--accent:#c9702f">
-      <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Thekuaa.jpg/500px-Thekuaa.jpg" alt="Thekua, a wheat and jaggery sweet made for Chhath puja">
-      <div class="scene-shadow" aria-hidden="true"></div>
-      <div class="scene-tint" aria-hidden="true"></div>
-      <div class="scene-scrim" aria-hidden="true"></div>
-      <div class="scene-content">
-        <div class="scene-landmark"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/GOLGHAR_-_BRITSH_GRANARY.JPG/500px-GOLGHAR_-_BRITSH_GRANARY.JPG" alt="Golghar, Patna, Bihar" loading="lazy"><span>Golghar</span></div>
-        <p class="scene-eyebrow">Patna, Bihar</p>
-        <h1 class="scene-title">Thekua</h1>
-        <p class="scene-note">Wheat and jaggery, deep-fried and stamped with a wooden mould. The sweet that travels in the Chhath prasad basket.</p>
-        <p class="scene-credit"><strong>Kanch Hi Baans Ke Bahangiya</strong> — Chhath geet, sung by Kalpana Patowary</p>
-        <button class="scene-play" data-video-id="Vc8wNTgKG1k" aria-label="Play this song">&#9654;</button>
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Thekuaa.jpg/500px-Thekuaa.jpg" alt="Thekua, a wheat and jaggery sweet made for Chhath puja">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Patna, Bihar</p>
+          <h1 class="scene-title">Thekua</h1>
+          <p class="scene-note">Wheat and jaggery, deep-fried and stamped with a wooden mould. The sweet that travels in the Chhath prasad basket.</p>
+          <p class="scene-credit"><strong>Kanch Hi Baans Ke Bahangiya</strong> — Chhath geet, sung by Kalpana Patowary</p>
+          <button class="scene-play" data-video-id="Vc8wNTgKG1k" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/GOLGHAR_-_BRITSH_GRANARY.JPG/500px-GOLGHAR_-_BRITSH_GRANARY.JPG" alt="Golghar, Patna, Bihar" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Golghar</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Known in antiquity as Pataliputra, Patna was the capital of the Mauryan and Gupta empires, one of the largest cities in the ancient world under Chandragupta Maurya.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Golghar</li>
+            <li>Patna Sahib Gurudwara</li>
+            <li>Buddha Smriti Park</li>
+            <li>Bihar Museum</li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="scene" data-index="10" style="--accent:#d99a2e">
-      <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Puneri_Ukadiche_Modak.jpg/500px-Puneri_Ukadiche_Modak.jpg" alt="Ukadiche modak, a steamed rice-flour dumpling from Pune">
-      <div class="scene-shadow" aria-hidden="true"></div>
-      <div class="scene-tint" aria-hidden="true"></div>
-      <div class="scene-scrim" aria-hidden="true"></div>
-      <div class="scene-content">
-        <div class="scene-landmark"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Shaniwar_Wada_Fort_Pune.jpg/500px-Shaniwar_Wada_Fort_Pune.jpg" alt="Shaniwar Wada, Pune, Maharashtra" loading="lazy"><span>Shaniwar Wada</span></div>
-        <p class="scene-eyebrow">Pune, Maharashtra</p>
-        <h1 class="scene-title">Modak</h1>
-        <p class="scene-note">Steamed rice-flour dumplings stuffed with jaggery and coconut. Ganpati Bappa's favourite, made fresh every Chaturthi.</p>
-        <p class="scene-credit"><strong>Sukhkarta Dukhharta</strong> — Ganpati Aarti, sung by Lata Mangeshkar</p>
-        <button class="scene-play" data-video-id="2LoxjhZ8jRo" aria-label="Play this song">&#9654;</button>
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Puneri_Ukadiche_Modak.jpg/500px-Puneri_Ukadiche_Modak.jpg" alt="Ukadiche modak, a steamed rice-flour dumpling from Pune">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Pune, Maharashtra</p>
+          <h1 class="scene-title">Modak</h1>
+          <p class="scene-note">Steamed rice-flour dumplings stuffed with jaggery and coconut. Ganpati Bappa's favourite, made fresh every Chaturthi.</p>
+          <p class="scene-credit"><strong>Sukhkarta Dukhharta</strong> — Ganpati Aarti, sung by Lata Mangeshkar</p>
+          <button class="scene-play" data-video-id="2LoxjhZ8jRo" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Shaniwar_Wada_Fort_Pune.jpg/500px-Shaniwar_Wada_Fort_Pune.jpg" alt="Shaniwar Wada, Pune, Maharashtra" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Shaniwar Wada</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Rose to prominence as the seat of the Peshwas, prime ministers of the Maratha Empire, in the 18th century. Shaniwar Wada was their fortified residence.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Shaniwar Wada</li>
+            <li>Aga Khan Palace</li>
+            <li>Sinhagad Fort</li>
+            <li>Osho Ashram</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="scene" data-index="11" style="--accent:#b8562f">
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Khurmi,_Chhattisgarhi_Cuisine.jpg/500px-Khurmi,_Chhattisgarhi_Cuisine.jpg" alt="Khurmi, a Chhattisgarhi wheat and jaggery sweet">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Raipur, Chhattisgarh</p>
+          <h1 class="scene-title">Khurmi</h1>
+          <p class="scene-note">Wheat flour, jaggery, and ghee, shaped into discs and deep-fried, made at home especially during the Pola and Teej festivals.</p>
+          <p class="scene-credit"><strong>Arpa Pairi Ke Dhar</strong> — Mamta Chandrakar</p>
+          <button class="scene-play" data-video-id="BKPhrjBheAA" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Mahant_Ghasidas_Sangrahalaya_Raipur_(5).jpg/500px-Mahant_Ghasidas_Sangrahalaya_Raipur_(5).jpg" alt="Mahant Ghasidas Memorial Museum, Raipur, Chhattisgarh" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Mahant Ghasidas Memorial Museum</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Founded by Brahma Deo Rai of the Kalachuri dynasty, which ruled the region historically known as Dakshina Kosala. Raipur became the capital of Chhattisgarh when the state was carved out of Madhya Pradesh on November 1, 2000.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Mahant Ghasidas Memorial Museum</li>
+            <li>Swami Vivekananda Sarovar (Budha Talab)</li>
+            <li>Purkhouti Muktangan, Naya Raipur</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="scene" data-index="12" style="--accent:#e8973f">
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Surti_Ghari.jpg/500px-Surti_Ghari.jpg" alt="Ghari, a layered Surti sweet of mawa, ghee, and dry fruits">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Surat, Gujarat</p>
+          <h1 class="scene-title">Ghari</h1>
+          <p class="scene-note">A rich, layered sweet of mawa, ghee, and dry fruits set on a crisp base, traditionally eaten in Surat on Chandni Padvo, the full-moon night after Diwali.</p>
+          <p class="scene-credit"><strong>Vaishnav Jan To</strong> — written by 15th-century poet-saint Narsinh Mehta, sung by Lata Mangeshkar</p>
+          <button class="scene-play" data-video-id="oyM_PZQvy14" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Surat_Fort,_front_View.jpg/500px-Surat_Fort,_front_View.jpg" alt="Surat Fort, Surat, Gujarat" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Surat Fort</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>One of the busiest ports on the Indian Ocean trade route through the Mughal era, Surat became the site of the British East India Company's first Indian trading factory in 1608. It later grew into a major center for textiles and diamond polishing, earning it the names "Silk City" and "Diamond City."</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Surat Fort (Old Fort)</li>
+            <li>Dutch Garden</li>
+            <li>Sardar Vallabhbhai Patel Museum</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="scene" data-index="13" style="--accent:#3f9e6d">
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Calicut_Halwa.jpg/500px-Calicut_Halwa.jpg" alt="Calicut halwa, a soft chewy sweet sold on Kozhikode's Sweet Meat Street">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Kozhikode, Kerala</p>
+          <h1 class="scene-title">Kozhikodan Halwa</h1>
+          <p class="scene-note">A soft, chewy, jelly-like halwa of wheat or rice starch, ghee, sugar, and cashews, famously sold along Kozhikode's "Sweet Meat Street" in black, white, and red varieties.</p>
+          <p class="scene-credit"><strong>Omanathinkal Kidavo</strong> — 19th-century lullaby by Irayimman Thampi, sung by K. S. Chithra</p>
+          <button class="scene-play" data-video-id="K96EMPiTw6U" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Kappad_4.jpg/500px-Kappad_4.jpg" alt="Kappad Beach, Kozhikode, Kerala" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Kappad Beach</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Kozhikode (Calicut) was the seat of the powerful Zamorin dynasty and a key node in the Indian Ocean spice trade for centuries. In 1498, Vasco da Gama landed at nearby Kappad beach, opening the first direct sea route between Europe and India.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Kappad Beach</li>
+            <li>Kozhikode Beach</li>
+            <li>Beypore (traditional Uru boat-building port)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="scene" data-index="14" style="--accent:#d1893f">
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Khaja_from_Puri,_Odisha.jpg/500px-Khaja_from_Puri,_Odisha.jpg" alt="Khaja, a crisp flaky fried pastry offered as prasad in Puri">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Puri, Odisha</p>
+          <h1 class="scene-title">Khaja</h1>
+          <p class="scene-note">A crisp, flaky, multi-layered fried pastry dipped in sugar syrup, one of the traditional sweets offered as prasad at the Jagannath Temple.</p>
+          <p class="scene-credit"><strong>Rangabati</strong> — Jitendra Haripal &amp; Krishna Patel, 1975 Sambalpuri folk classic</p>
+          <button class="scene-play" data-video-id="nZ0F2KjTc8g" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Jagannath_Temple,_Puri_04.jpg/500px-Jagannath_Temple,_Puri_04.jpg" alt="Jagannath Temple, Puri, Odisha" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Jagannath Temple</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Puri is one of Hinduism's Char Dham pilgrimage sites, home to the Jagannath Temple built in the 12th century under the Eastern Ganga dynasty. It hosts the annual Rath Yatra chariot festival, one of the largest religious processions in the world.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Jagannath Temple</li>
+            <li>Puri Beach</li>
+            <li>Konark Sun Temple (nearby)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="scene" data-index="15" style="--accent:#6b8f4a">
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Bal_mithai.jpg/500px-Bal_mithai.jpg" alt="Bal Mithai, a dark khoya fudge rolled in sugar-coated poppy-seed balls">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Almora, Uttarakhand</p>
+          <h1 class="scene-title">Bal Mithai</h1>
+          <p class="scene-note">Khoya cooked with cane sugar until deep brown, cut into cubes and rolled in tiny sugar-coated poppy-seed balls, a specialty of Kumaon's Almora district.</p>
+          <p class="scene-credit"><strong>Bedu Pako Baro Masa</strong> — traditional Kumaoni folk song, now the Kumaon Regiment's regimental song</p>
+          <button class="scene-play" data-video-id="SAQe0L7RP30" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Kasar_Devi_Temple.JPG/500px-Kasar_Devi_Temple.JPG" alt="Kasar Devi Temple, Almora, Uttarakhand" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Kasar Devi Temple</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Founded in 1568 by Kalyan Chand of the Chand dynasty, Almora was the seat of the Kumaon kingdom into the late 18th century, later held by Gorkha forces until the British took it in the 1814 Anglo-Gorkha War. Set on a Himalayan ridge, it remains the cultural capital of Kumaon.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Kasar Devi Temple</li>
+            <li>Bright End Corner</li>
+            <li>Binsar Wildlife Sanctuary</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="scene" data-index="16" style="--accent:#2f9ea8">
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Bebinca,_a_delicacy_and_sweet_from_Goa.jpg/500px-Bebinca,_a_delicacy_and_sweet_from_Goa.jpg" alt="Bebinca, a layered Indo-Portuguese Goan cake">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Panaji, Goa</p>
+          <h1 class="scene-title">Bebinca</h1>
+          <p class="scene-note">A 7-to-16-layer Indo-Portuguese cake of flour, sugar, ghee, coconut milk, and egg yolk, baked one thin layer at a time and traditionally made for Christmas.</p>
+          <p class="scene-credit"><strong>Bebdo</strong> — Lorna Cordeiro, composed by Chris Perry, traditional Goan Konkani song</p>
+          <button class="scene-play" data-video-id="q1w95jUCHDU" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/500px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg" alt="Basilica of Bom Jesus, Panaji, Goa" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Basilica of Bom Jesus</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Panaji appears in an 1059 CE Kadamba-dynasty copper plate; its fort was stormed by the Portuguese in 1510. After an epidemic devastated Old Goa, the Portuguese rebuilt around Panaji as the new capital of Portuguese India in the 18th century, and it has been Goa's state capital since 1987.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Basilica of Bom Jesus (Old Goa)</li>
+            <li>Fort Aguada</li>
+            <li>Miramar Beach</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="scene" data-index="17" style="--accent:#4a7fa8">
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Firni_Or_Phirni.jpg/500px-Firni_Or_Phirni.jpg" alt="Firni, a rose-water scented ground-rice pudding from Kashmir">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Srinagar, Jammu &amp; Kashmir</p>
+          <h1 class="scene-title">Firni</h1>
+          <p class="scene-note">A ground-rice milk pudding flavoured with rose water or kewra, known locally as "firin," the traditional closing dessert of Kashmir's Wazwan feast.</p>
+          <p class="scene-credit"><strong>Bumbro</strong> — Mission Kashmir, sung by Sunidhi Chauhan, based on a traditional Kashmiri folk melody</p>
+          <button class="scene-play" data-video-id="PquZBLuFmwA" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Dal_Lake,_Srinagar,_July_2012.jpg/500px-Dal_Lake,_Srinagar,_July_2012.jpg" alt="Dal Lake, Srinagar, Jammu &amp; Kashmir" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Dal Lake</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Present-day Srinagar traces to Parvarapura, founded in the 6th century by King Pravarasena II at the base of Hari Parbat. Sultanate rulers built the Jamia Masjid in 1402, and Mughal emperors later laid out the Shalimar and Nishat gardens along the lake.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Dal Lake</li>
+            <li>Shalimar Bagh</li>
+            <li>Shankaracharya Temple</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="scene" data-index="18" style="--accent:#a85f8f">
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Cr%C3%A8me_br%C3%BBl%C3%A9e_w._whipped_cream.jpg/500px-Cr%C3%A8me_br%C3%BBl%C3%A9e_w._whipped_cream.jpg" alt="Crème brûlée, a legacy of Puducherry's French colonial past">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Puducherry</p>
+          <h1 class="scene-title">Crème Brûlée</h1>
+          <p class="scene-note">A caramelized-sugar custard that stuck around after 280 years as a French colonial outpost. No other Indian city's "local sweet" is French, and that's exactly the point.</p>
+          <p class="scene-credit"><strong>Kakkai Chiraginile</strong> — written by Subramania Bharati, sung by K. J. Yesudas</p>
+          <button class="scene-play" data-video-id="bXZOcjqCY-8" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/The_Matrimandir_in_Auroville,_Tamil_Nadu,_India.jpg/500px-The_Matrimandir_in_Auroville,_Tamil_Nadu,_India.jpg" alt="Matrimandir, Auroville, Puducherry" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Matrimandir, Auroville</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Ruled by the Pallavas, Cholas, and Pandyas before French trader François Martin founded a settlement in 1674, Puducherry stayed France's chief Indian colony until administration passed to India in 1954. Poet-freedom fighter Subramania Bharati lived here in exile from 1908 to 1918.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Auroville (Matrimandir)</li>
+            <li>Sri Aurobindo Ashram</li>
+            <li>Promenade Beach / French Quarter</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="scene" data-index="19" style="--accent:#5a9e7a">
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Chahao_kheer.jpg/500px-Chahao_kheer.jpg" alt="Chak-hao kheer, a pudding made from Manipur's black rice">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Imphal, Manipur</p>
+          <h1 class="scene-title">Chak-hao Kheer</h1>
+          <p class="scene-note">A rice pudding made from Manipur's aromatic, dark-purple chak-hao rice, cooked with milk, coconut, and raisins for festivals and special occasions.</p>
+          <p class="scene-credit"><strong>Khongjom Parva (Moirang Kangleirol)</strong> — traditional Pena ballad narrating the Khamba-Thoibi legend</p>
+          <button class="scene-play" data-video-id="KRC_9PkAQRs" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Kangla_Fort,_imphal.JPG/500px-Kangla_Fort,_imphal.JPG" alt="Kangla Fort, Imphal, Manipur" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Kangla Fort</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Imphal was the seat of the Meitei Ningthouja dynasty kings for centuries, centered on Kangla Fort, until the British took control after the 1891 Anglo-Manipur War. In 1944 it was the site of the Battle of Imphal, where Allied forces halted Japan's attempted invasion of India.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Kangla Fort</li>
+            <li>Loktak Lake</li>
+            <li>Ima Keithel (the all-women's market)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="scene" data-index="20" style="--accent:#4a9e8f">
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Til_Pitha.jpg/500px-Til_Pitha.jpg" alt="Til Pitha, a rice-flour crepe rolled around sesame and jaggery">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Guwahati, Assam</p>
+          <h1 class="scene-title">Til Pitha</h1>
+          <p class="scene-note">A rice-flour crepe rolled around roasted sesame and jaggery, made especially during Assam's Magh Bihu harvest festival.</p>
+          <p class="scene-credit"><strong>Mayabini Ratir Bukut</strong> — Zubeen Garg</p>
+          <button class="scene-play" data-video-id="AqUonMjxaog" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Kamakhya_Temple,_Guwahati.jpg/500px-Kamakhya_Temple,_Guwahati.jpg" alt="Kamakhya Temple, Guwahati, Assam" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Kamakhya Temple</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Guwahati, on the banks of the Brahmaputra, was known in antiquity as Pragjyotishpura and served as capital of the ancient Kamarupa kingdom. It is today Assam's largest city and the gateway to Northeast India, home to the Kamakhya Temple, one of the subcontinent's oldest Shakti Peetha shrines.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Kamakhya Temple</li>
+            <li>Umananda Island</li>
+            <li>Assam State Museum</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="scene" data-index="21" style="--accent:#d94f5f">
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/A_Tirupathi_laddu.jpg/500px-A_Tirupathi_laddu.jpg" alt="Tirupati laddu, a ghee-roasted gram-flour laddu offered as temple prasadam">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Tirupati, Andhra Pradesh</p>
+          <h1 class="scene-title">Tirupati Laddu</h1>
+          <p class="scene-note">A ghee-roasted gram-flour laddu with cashews, cardamom, and raisins, prepared daily as prasadam at the Tirumala temple and awarded a Geographical Indication tag in 2009.</p>
+          <p class="scene-credit"><strong>Sri Venkatesa Suprabhatam</strong> — M. S. Subbulakshmi</p>
+          <button class="scene-play" data-video-id="R-bwYbOExt8" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/A_View_of_Tirumala_Venkateswara_Temple.JPG/500px-A_View_of_Tirumala_Venkateswara_Temple.JPG" alt="Tirumala Venkateswara Temple, Tirupati, Andhra Pradesh" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Tirumala Venkateswara Temple</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Tirupati grew around the Tirumala Venkateswara Temple, one of the world's most-visited religious sites, with inscriptions and endowments dating to the Pallava, Chola, and Vijayanagara periods.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Tirumala Venkateswara Temple</li>
+            <li>Sri Venkateswara Zoological Park</li>
+            <li>Kapila Theertham</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="scene" data-index="22" style="--accent:#8f6b4a">
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Home_made_gajak.jpg/500px-Home_made_gajak.jpg" alt="Gajak, a crisp sesame and jaggery winter sweet from Gwalior">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Gwalior, Madhya Pradesh</p>
+          <h1 class="scene-title">Gajak</h1>
+          <p class="scene-note">A crisp, dry winter sweet of hand-beaten sesame seeds and jaggery, with Gwalior and the neighbouring Morena-Bhind belt famous for it, traditionally eaten around Makar Sankranti.</p>
+          <p class="scene-credit"><strong>Rain Ragas: Megh and Miyan ki Malhar</strong> — Ustad Amjad Ali Khan on sarod, Gwalior's own gharana lineage</p>
+          <button class="scene-play" data-video-id="aCz4tvuA8iU" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Man_Singh_Palace,_Gwalior_Fort.JPG/500px-Man_Singh_Palace,_Gwalior_Fort.JPG" alt="Gwalior Fort, Gwalior, Madhya Pradesh" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Gwalior Fort</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Gwalior grew around its hilltop fort, ruled successively by the Tomars, Mughals, and the Maratha Scindia dynasty. It is the seat of the Gwalior Gharana of Hindustani classical music and home to Tansen's tomb; UNESCO named it a "City of Music" in 2023.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Gwalior Fort (Man Singh Palace)</li>
+            <li>Jai Vilas Palace</li>
+            <li>Tansen's Tomb</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="scene" data-index="23" style="--accent:#c47a3f">
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Thekua_Prasadam_of_Chhath_Puja.jpg/500px-Thekua_Prasadam_of_Chhath_Puja.jpg" alt="Thekua, a wheat and jaggery cookie made as Chhath Puja prasad">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Ranchi, Jharkhand</p>
+          <h1 class="scene-title">Thekua</h1>
+          <p class="scene-note">A dense wheat-flour and jaggery cookie flavoured with cardamom and dry coconut, deep-fried till golden, the signature prasad of Chhath Puja across Bihar, Jharkhand, and eastern UP.</p>
+          <p class="scene-credit"><strong>Jiya Ho Bihar Ke Lala</strong> — Manoj Tiwari</p>
+          <button class="scene-play" data-video-id="Hl8BePMoF1s" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/17th_century_Jagannath_temple_Ranchi_Jharkhand_-_9.jpg/500px-17th_century_Jagannath_temple_Ranchi_Jharkhand_-_9.jpg" alt="Jagannath Temple, Ranchi, Ranchi, Jharkhand" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Jagannath Temple, Ranchi</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Ranchi grew into a colonial administrative hub after the South-West Frontier Agency set up headquarters here in 1833, and later served as Bihar's summer capital. It became Jharkhand's capital when the state was carved out on November 15, 2000, and is nicknamed the "City of Waterfalls" for cascades like Hundru Falls on its outskirts.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Jagannath Temple</li>
+            <li>Rock Garden (Kanke Dam)</li>
+            <li>Hundru Falls</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="scene" data-index="24" style="--accent:#3f7a9e">
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/PINNI.jpg/500px-PINNI.jpg" alt="Pinni, a dense wheat, ghee and jaggery winter sweet">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Kurukshetra, Haryana</p>
+          <h1 class="scene-title">Pinni</h1>
+          <p class="scene-note">Roasted whole-wheat flour, desi ghee, jaggery, and almonds pressed into a dense winter sweet, made across Haryana and the Punjab plains for cold months, weddings, and childbirth celebrations.</p>
+          <p class="scene-credit"><strong>Teri Aakhya Ka Yo Kajal</strong> — Veer Dahiya, Haryanvi</p>
+          <button class="scene-play" data-video-id="e9MRkPcKKRc" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Brahma_Sarovar_Kurukshetra.jpg/500px-Brahma_Sarovar_Kurukshetra.jpg" alt="Brahma Sarovar, Kurukshetra, Haryana" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Brahma Sarovar</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>Kurukshetra, also called Dharmakshetra, is named after King Kuru and revered as the battlefield of the Mahabharata war, where Krishna delivered the Bhagavad Gita to Arjuna at Jyotisar. It remains a major pilgrimage site anchored by Brahma Sarovar, one of Asia's largest man-made sacred ponds.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Brahma Sarovar</li>
+            <li>Jyotisar</li>
+            <li>Sthaneshwar Mahadev Temple</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="scene" data-index="25" style="--accent:#5f7a9e">
+      <div class="sweet-panel">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Bobaru,_a_traditional_Sweet_Dish_of_Kullu_District,_Himachal_Pradesh,1.jpg/500px-Bobaru,_a_traditional_Sweet_Dish_of_Kullu_District,_Himachal_Pradesh,1.jpg" alt="Bobaru, a fried wheat and jaggery sweet from Kullu district">
+        <div class="scene-scrim" aria-hidden="true"></div>
+        <div class="sweet-content">
+          <p class="scene-eyebrow">Kullu, Himachal Pradesh</p>
+          <h1 class="scene-title">Bobaru</h1>
+          <p class="scene-note">A deep-fried, flat wheat-flour sweet with jaggery and dry fruits, a Kullu valley specialty traditionally shared with family and neighbours the day after Lohri.</p>
+          <p class="scene-credit"><strong>Teri Shangri Kullu Ri Deiye</strong> — Kuldeep Sharma, "Nati King"</p>
+          <button class="scene-play" data-video-id="f-YtpYA7zrs" aria-label="Play this song">&#9654;</button>
+        </div>
+      </div>
+      <div class="city-panel">
+        <div class="bento-cell bento-landmark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Shiva_shrine.jpg/500px-Shiva_shrine.jpg" alt="Raghunath Temple, Kullu, Himachal Pradesh" loading="lazy">
+          <div>
+            <span class="bento-label">Landmark</span>
+            <h3>Raghunath Temple</h3>
+          </div>
+        </div>
+        <div class="bento-cell bento-history">
+          <span class="bento-label">History</span>
+          <p>The Kullu valley appears in the Ramayana, Mahabharata, and Puranas, and the Chinese monk Xuanzang described it around 634-635 CE as a fertile valley ringed by mountains and monasteries. In 1650, the idol of Raghunath was brought from Ayodhya and enshrined here, and it still anchors Kullu's famous Dussehra festival today.</p>
+        </div>
+        <div class="bento-cell bento-places">
+          <span class="bento-label">Places to visit</span>
+          <ul>
+            <li>Raghunath Temple</li>
+            <li>Naggar</li>
+            <li>Bijli Mahadev Temple</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -212,6 +932,21 @@
         <button class="dot" data-index="8" aria-label="Go to Tirunelveli"></button>
         <button class="dot" data-index="9" aria-label="Go to Patna"></button>
         <button class="dot" data-index="10" aria-label="Go to Pune"></button>
+        <button class="dot" data-index="11" aria-label="Go to Raipur"></button>
+        <button class="dot" data-index="12" aria-label="Go to Surat"></button>
+        <button class="dot" data-index="13" aria-label="Go to Kozhikode"></button>
+        <button class="dot" data-index="14" aria-label="Go to Puri"></button>
+        <button class="dot" data-index="15" aria-label="Go to Almora"></button>
+        <button class="dot" data-index="16" aria-label="Go to Panaji"></button>
+        <button class="dot" data-index="17" aria-label="Go to Srinagar"></button>
+        <button class="dot" data-index="18" aria-label="Go to Puducherry"></button>
+        <button class="dot" data-index="19" aria-label="Go to Imphal"></button>
+        <button class="dot" data-index="20" aria-label="Go to Guwahati"></button>
+        <button class="dot" data-index="21" aria-label="Go to Tirupati"></button>
+        <button class="dot" data-index="22" aria-label="Go to Gwalior"></button>
+        <button class="dot" data-index="23" aria-label="Go to Ranchi"></button>
+        <button class="dot" data-index="24" aria-label="Go to Kurukshetra"></button>
+        <button class="dot" data-index="25" aria-label="Go to Kullu"></button>
   </div>
 </main>
 
