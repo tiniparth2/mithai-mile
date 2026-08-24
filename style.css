@@ -98,17 +98,25 @@ section {
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  filter: saturate(1.05) contrast(1.05) brightness(0.9);
+  filter: grayscale(1) contrast(1.5) brightness(1.3);
   transform: scale(1.02);
 }
 
-.tint {
+/* duotone poster treatment: grayscale photo -> multiply with near-black (shadows) -> screen with accent (highlights) */
+.duo-shadow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #120b06;
+  mix-blend-mode: multiply;
+}
+
+.duo-highlight {
   position: absolute;
   inset: 0;
   z-index: 1;
   background: var(--accent, var(--gold));
-  mix-blend-mode: color;
-  opacity: 0.35;
+  mix-blend-mode: screen;
 }
 
 .scrim {
@@ -237,6 +245,86 @@ section {
   border-color: var(--gold);
   color: #1b120c;
   transform: translateY(-2px);
+}
+
+.atlas {
+  min-height: auto;
+  align-items: center;
+  padding: 12vh 6vw;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(232, 179, 76, 0.1), transparent 60%),
+    var(--bg-alt);
+  border-bottom: 1px solid rgba(246, 236, 217, 0.06);
+}
+
+.atlas-inner {
+  max-width: 920px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.atlas h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--cream);
+  margin-top: 8px;
+}
+
+.atlas-sub {
+  margin-top: 16px;
+  color: var(--cream-dim);
+  font-size: 1.02rem;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.atlas-region {
+  margin-top: 52px;
+  text-align: left;
+}
+
+.atlas-region h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  color: var(--gold);
+  border-bottom: 1px solid rgba(246, 236, 217, 0.15);
+  padding-bottom: 10px;
+  margin-bottom: 18px;
+}
+
+.atlas-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 32px;
+}
+
+.atlas-list li {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--cream-dim);
+  padding-bottom: 10px;
+  border-bottom: 1px dashed rgba(246, 236, 217, 0.08);
+}
+
+.atlas-list strong {
+  color: var(--cream);
+  font-weight: 600;
+}
+
+.atlas-footnote {
+  margin-top: 48px;
+  font-size: 0.82rem;
+  color: var(--cream-dim);
+  opacity: 0.7;
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .atlas-list { grid-template-columns: 1fr; }
 }
 
 .outro {
