@@ -134,7 +134,7 @@ button { font-family: inherit; }
   z-index: 3;
   max-width: 680px;
   width: 100%;
-  padding: 0 6vw;
+  padding: 0 max(6vw, 100px);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -610,7 +610,7 @@ button { font-family: inherit; }
 #npPlay { width: 36px; height: 36px; background: var(--gold); }
 
 @media (max-width: 700px) {
-  .scene-content { margin-top: -4vh; gap: 10px; }
+  .scene-content { margin-top: -4vh; gap: 10px; padding: 0 62px; }
   .nav-arrow { width: 42px; height: 42px; font-size: 1.05rem; }
   .nav-prev { left: 10px; }
   .nav-next { right: 10px; }
