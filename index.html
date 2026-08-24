@@ -13,16 +13,18 @@
 </head>
 <body>
 
+<div class="film-grain" aria-hidden="true"></div>
 <div class="progress-bar" id="progressBar"></div>
-<div class="stop-counter" id="stopCounter">India ka Meetha</div>
+<div class="live-clock" id="liveClock">-- : -- IST</div>
+<div class="stop-chip" id="stopChip">Mithai Mile</div>
 
 <main id="sections">
 
-  <section class="hero" style="--accent:#e8b34c">
+  <section class="hero">
     <div class="hero-inner">
       <p class="eyebrow">a playlist made of mithai</p>
       <h1>Mithai Mile</h1>
-      <p class="hero-sub">Eleven cities. Eleven sweets. One song each, playing quietly on the counter while you scroll.</p>
+      <p class="hero-sub">Eleven cities. Eleven sweets. One song each, playing on the counter as you walk past.</p>
       <div class="scroll-cue" aria-hidden="true">
         <span>scroll</span>
         <div class="scroll-line"></div>
@@ -30,179 +32,146 @@
     </div>
   </section>
 
-  <section class="stop" data-city="Kolkata" style="--accent:#e8b34c">
+  <section class="stop" data-city="Kolkata" data-song="Ekla Cholo Re" style="--accent:#e8b34c">
+    <img class="bg-photo" src="https://upload.wikimedia.org/wikipedia/commons/7/72/Rasmalai1.jpg" alt="Rasmalai, a Bengali sweet of milk dumplings in thickened milk">
+    <div class="tint" aria-hidden="true"></div>
+    <div class="scrim" aria-hidden="true"></div>
     <div class="stop-inner">
       <p class="eyebrow">Kolkata, West Bengal</p>
-      <div class="sweet-row">
-        <span class="sweet-emoji">🍡</span>
-        <h2>Rasgulla &amp; Rasmalai</h2>
-      </div>
+      <h2>Rasgulla &amp; Rasmalai</h2>
       <p class="note">Spongy chhena balls dunked in sugar syrup or slow-thickened milk, the pride of every mishti shop on the block.</p>
-      <div class="player" data-video-id="i5hQ6yBfZRE">
-        <img class="thumb" src="https://img.youtube.com/vi/i5hQ6yBfZRE/hqdefault.jpg" alt="" loading="lazy">
-        <button class="play-btn" aria-label="Play Ekla Cholo Re">▶</button>
-      </div>
       <p class="song-credit"><strong>Ekla Cholo Re</strong> — Rabindranath Tagore, sung by Anupam Roy</p>
+      <button class="play-chip" data-video-id="i5hQ6yBfZRE">▶ Play this song</button>
     </div>
   </section>
 
-  <section class="stop" data-city="Jaipur" style="--accent:#d1a52c">
+  <section class="stop" data-city="Jaipur" data-song="Kesariya Balam Aavo Ni" style="--accent:#d1a52c">
+    <img class="bg-photo" src="https://upload.wikimedia.org/wikipedia/commons/9/98/Paneer_ghevar.jpg" alt="Ghevar, a honeycombed Rajasthani sweet disc">
+    <div class="tint" aria-hidden="true"></div>
+    <div class="scrim" aria-hidden="true"></div>
     <div class="stop-inner">
       <p class="eyebrow">Jaipur, Rajasthan</p>
-      <div class="sweet-row">
-        <span class="sweet-emoji">🍯</span>
-        <h2>Ghevar</h2>
-      </div>
+      <h2>Ghevar</h2>
       <p class="note">A disc of fried batter honeycombed with air pockets, soaked in syrup and made only for Teej, exactly when this song is sung.</p>
-      <div class="player" data-video-id="90VgoARUJYE">
-        <img class="thumb" src="https://img.youtube.com/vi/90VgoARUJYE/hqdefault.jpg" alt="" loading="lazy">
-        <button class="play-btn" aria-label="Play Kesariya Balam Aavo Ni">▶</button>
-      </div>
       <p class="song-credit"><strong>Kesariya Balam Aavo Ni</strong> — Rajasthani folk, sung by Sarita Kharwal</p>
+      <button class="play-chip" data-video-id="90VgoARUJYE">▶ Play this song</button>
     </div>
   </section>
 
-  <section class="stop" data-city="Delhi" style="--accent:#b0532e">
+  <section class="stop" data-city="Delhi" data-song="Dilli Wali Girlfriend" style="--accent:#b0532e">
+    <img class="bg-photo" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Motichur_ka_laddu.JPG" alt="Motichoor ladoo, a Delhi sweet of fried gram-flour pearls">
+    <div class="tint" aria-hidden="true"></div>
+    <div class="scrim" aria-hidden="true"></div>
     <div class="stop-inner">
       <p class="eyebrow">Delhi</p>
-      <div class="sweet-row">
-        <span class="sweet-emoji">🟠</span>
-        <h2>Ladoo</h2>
-      </div>
+      <h2>Ladoo</h2>
       <p class="note">Besan, boondi, or motichoor, hand-rolled outside every Chandni Chowk mithai shop. The default sweet for good news.</p>
-      <div class="player" data-video-id="4QzmXuOghtU">
-        <img class="thumb" src="https://img.youtube.com/vi/4QzmXuOghtU/hqdefault.jpg" alt="" loading="lazy">
-        <button class="play-btn" aria-label="Play Dilli Wali Girlfriend">▶</button>
-      </div>
       <p class="song-credit"><strong>Dilli Wali Girlfriend</strong> — Yeh Jawaani Hai Deewani, Arijit Singh &amp; Sunidhi Chauhan</p>
+      <button class="play-chip" data-video-id="4QzmXuOghtU">▶ Play this song</button>
     </div>
   </section>
 
-  <section class="stop" data-city="Agra" style="--accent:#c2673a">
+  <section class="stop" data-city="Agra" data-song="Pyar Kiya Toh Darna Kya" style="--accent:#c2673a">
+    <img class="bg-photo" src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Petha-from-Agra.JPG" alt="Petha, translucent candied ash-gourd cubes from Agra">
+    <div class="tint" aria-hidden="true"></div>
+    <div class="scrim" aria-hidden="true"></div>
     <div class="stop-inner">
       <p class="eyebrow">Agra, Uttar Pradesh</p>
-      <div class="sweet-row">
-        <span class="sweet-emoji">🍬</span>
-        <h2>Petha</h2>
-      </div>
+      <h2>Petha</h2>
       <p class="note">Translucent ash-gourd cubes candied in sugar syrup, sold outside the Taj since the Mughal era.</p>
-      <div class="player" data-video-id="dRLJ15dXbEk">
-        <img class="thumb" src="https://img.youtube.com/vi/dRLJ15dXbEk/hqdefault.jpg" alt="" loading="lazy">
-        <button class="play-btn" aria-label="Play Pyar Kiya Toh Darna Kya">▶</button>
-      </div>
       <p class="song-credit"><strong>Pyar Kiya Toh Darna Kya</strong> — Mughal-E-Azam, Lata Mangeshkar</p>
+      <button class="play-chip" data-video-id="dRLJ15dXbEk">▶ Play this song</button>
     </div>
   </section>
 
-  <section class="stop" data-city="Varanasi" style="--accent:#9c3d3d">
+  <section class="stop" data-city="Varanasi" data-song="Banarasiya" style="--accent:#9c3d3d">
+    <img class="bg-photo" src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Malaiyo.jpg" alt="Malaiyo, whipped milk-foam sweet from Varanasi's winter mornings">
+    <div class="tint" aria-hidden="true"></div>
+    <div class="scrim" aria-hidden="true"></div>
     <div class="stop-inner">
       <p class="eyebrow">Varanasi, Uttar Pradesh</p>
-      <div class="sweet-row">
-        <span class="sweet-emoji">🥛</span>
-        <h2>Malaiyo</h2>
-      </div>
+      <h2>Malaiyo</h2>
       <p class="note">Whipped, dew-set milk foam sold only on winter mornings on the ghats. Dissolves before it fully lands on the tongue.</p>
-      <div class="player" data-video-id="-ydFM29TPnQ">
-        <img class="thumb" src="https://img.youtube.com/vi/-ydFM29TPnQ/hqdefault.jpg" alt="" loading="lazy">
-        <button class="play-btn" aria-label="Play Banarasiya">▶</button>
-      </div>
       <p class="song-credit"><strong>Banarasiya</strong> — Raanjhanaa, A.R. Rahman &amp; Shreya Ghoshal</p>
+      <button class="play-chip" data-video-id="-ydFM29TPnQ">▶ Play this song</button>
     </div>
   </section>
 
-  <section class="stop" data-city="Amritsar" style="--accent:#7a2e2e">
+  <section class="stop" data-city="Amritsar" data-song="Laung Laachi" style="--accent:#7a2e2e">
+    <img class="bg-photo" src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Pinni_cropped.JPG" alt="Pinni, a Punjabi winter sweet of wheat, ghee and nuts">
+    <div class="tint" aria-hidden="true"></div>
+    <div class="scrim" aria-hidden="true"></div>
     <div class="stop-inner">
       <p class="eyebrow">Amritsar, Punjab</p>
-      <div class="sweet-row">
-        <span class="sweet-emoji">🌰</span>
-        <h2>Pinni</h2>
-      </div>
+      <h2>Pinni</h2>
       <p class="note">Whole wheat, ghee, and nuts rolled into a dense winter ladoo, packed into every tiffin a Punjabi son takes leaving home.</p>
-      <div class="player" data-video-id="YpkJO_GrCo0">
-        <img class="thumb" src="https://img.youtube.com/vi/YpkJO_GrCo0/hqdefault.jpg" alt="" loading="lazy">
-        <button class="play-btn" aria-label="Play Laung Laachi">▶</button>
-      </div>
       <p class="song-credit"><strong>Laung Laachi</strong> — title track, sung by Mannat Noor</p>
+      <button class="play-chip" data-video-id="YpkJO_GrCo0">▶ Play this song</button>
     </div>
   </section>
 
-  <section class="stop" data-city="Mysore" style="--accent:#e2a33b">
+  <section class="stop" data-city="Mysore" data-song="Belageddu" style="--accent:#e2a33b">
+    <img class="bg-photo" src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Mysore_pak.jpg" alt="Mysore Pak, a ghee and gram-flour sweet from the Mysore Palace kitchen">
+    <div class="tint" aria-hidden="true"></div>
+    <div class="scrim" aria-hidden="true"></div>
     <div class="stop-inner">
       <p class="eyebrow">Mysore, Karnataka</p>
-      <div class="sweet-row">
-        <span class="sweet-emoji">🧈</span>
-        <h2>Mysore Pak</h2>
-      </div>
+      <h2>Mysore Pak</h2>
       <p class="note">Ghee, gram flour, and sugar, invented in the Mysore Palace kitchen in the 1930s and never bettered since.</p>
-      <div class="player" data-video-id="ebz20FHrT44">
-        <img class="thumb" src="https://img.youtube.com/vi/ebz20FHrT44/hqdefault.jpg" alt="" loading="lazy">
-        <button class="play-btn" aria-label="Play Belageddu">▶</button>
-      </div>
       <p class="song-credit"><strong>Belageddu</strong> — Kirik Party, sung by Vijay Prakash</p>
+      <button class="play-chip" data-video-id="ebz20FHrT44">▶ Play this song</button>
     </div>
   </section>
 
-  <section class="stop" data-city="Hyderabad" style="--accent:#c9556a">
+  <section class="stop" data-city="Hyderabad" data-song="Naatu Naatu" style="--accent:#c9556a">
+    <img class="bg-photo" src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Double_Ka_Meetha.JPG" alt="Double Ka Meetha, a Hyderabadi bread pudding in saffron milk">
+    <div class="tint" aria-hidden="true"></div>
+    <div class="scrim" aria-hidden="true"></div>
     <div class="stop-inner">
       <p class="eyebrow">Hyderabad, Telangana</p>
-      <div class="sweet-row">
-        <span class="sweet-emoji">🍮</span>
-        <h2>Double Ka Meetha</h2>
-      </div>
+      <h2>Double Ka Meetha</h2>
       <p class="note">Fried bread soaked in saffron milk and topped with dry fruits, the Nizami answer to bread pudding.</p>
-      <div class="player" data-video-id="4_eEgJhsBMo">
-        <img class="thumb" src="https://img.youtube.com/vi/4_eEgJhsBMo/hqdefault.jpg" alt="" loading="lazy">
-        <button class="play-btn" aria-label="Play Naatu Naatu">▶</button>
-      </div>
       <p class="song-credit"><strong>Naatu Naatu</strong> — RRR, Rahul Sipligunj &amp; Kaala Bhairava</p>
+      <button class="play-chip" data-video-id="4_eEgJhsBMo">▶ Play this song</button>
     </div>
   </section>
 
-  <section class="stop" data-city="Tirunelveli" style="--accent:#5a3a2e">
+  <section class="stop" data-city="Tirunelveli" data-song="Rowdy Baby" style="--accent:#5a3a2e">
+    <img class="bg-photo" src="https://upload.wikimedia.org/wikipedia/commons/0/04/Tirunelveli_halwa.jpg" alt="Tirunelveli halwa, a wheat halwa first sold in the dark">
+    <div class="tint" aria-hidden="true"></div>
+    <div class="scrim" aria-hidden="true"></div>
     <div class="stop-inner">
       <p class="eyebrow">Tirunelveli, Tamil Nadu</p>
-      <div class="sweet-row">
-        <span class="sweet-emoji">🟤</span>
-        <h2>Iruttukadai Halwa</h2>
-      </div>
+      <h2>Iruttukadai Halwa</h2>
       <p class="note">Wheat halwa first sold in the dark ("iruttu") because the shop had no electricity. The name outlived the blackout by a century.</p>
-      <div class="player" data-video-id="x6Q7c9RyMzk">
-        <img class="thumb" src="https://img.youtube.com/vi/x6Q7c9RyMzk/hqdefault.jpg" alt="" loading="lazy">
-        <button class="play-btn" aria-label="Play Rowdy Baby">▶</button>
-      </div>
       <p class="song-credit"><strong>Rowdy Baby</strong> — Maari 2, Dhanush &amp; Dhee</p>
+      <button class="play-chip" data-video-id="x6Q7c9RyMzk">▶ Play this song</button>
     </div>
   </section>
 
-  <section class="stop" data-city="Patna" style="--accent:#8a4a2e">
+  <section class="stop" data-city="Patna" data-song="Kanch Hi Baans Ke Bahangiya" style="--accent:#8a4a2e">
+    <img class="bg-photo" src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Thekuaa.jpg" alt="Thekua, a wheat and jaggery sweet made for Chhath puja">
+    <div class="tint" aria-hidden="true"></div>
+    <div class="scrim" aria-hidden="true"></div>
     <div class="stop-inner">
       <p class="eyebrow">Patna, Bihar</p>
-      <div class="sweet-row">
-        <span class="sweet-emoji">🪔</span>
-        <h2>Thekua</h2>
-      </div>
+      <h2>Thekua</h2>
       <p class="note">Wheat and jaggery, deep-fried and stamped with a wooden mould. The sweet that travels in the Chhath prasad basket.</p>
-      <div class="player" data-video-id="Vc8wNTgKG1k">
-        <img class="thumb" src="https://img.youtube.com/vi/Vc8wNTgKG1k/hqdefault.jpg" alt="" loading="lazy">
-        <button class="play-btn" aria-label="Play Kanch Hi Baans Ke Bahangiya">▶</button>
-      </div>
       <p class="song-credit"><strong>Kanch Hi Baans Ke Bahangiya</strong> — Chhath geet, sung by Kalpana Patowary</p>
+      <button class="play-chip" data-video-id="Vc8wNTgKG1k">▶ Play this song</button>
     </div>
   </section>
 
-  <section class="stop" data-city="Pune" style="--accent:#b8862e">
+  <section class="stop" data-city="Pune" data-song="Sukhkarta Dukhharta" style="--accent:#b8862e">
+    <img class="bg-photo" src="https://upload.wikimedia.org/wikipedia/commons/0/06/Puneri_Ukadiche_Modak.jpg" alt="Ukadiche modak, a steamed rice-flour dumpling from Pune">
+    <div class="tint" aria-hidden="true"></div>
+    <div class="scrim" aria-hidden="true"></div>
     <div class="stop-inner">
       <p class="eyebrow">Pune, Maharashtra</p>
-      <div class="sweet-row">
-        <span class="sweet-emoji">🥟</span>
-        <h2>Modak</h2>
-      </div>
+      <h2>Modak</h2>
       <p class="note">Steamed rice-flour dumplings stuffed with jaggery and coconut. Ganpati Bappa's favourite, made fresh every Chaturthi.</p>
-      <div class="player" data-video-id="w0W8Wh-8UCg">
-        <img class="thumb" src="https://img.youtube.com/vi/w0W8Wh-8UCg/hqdefault.jpg" alt="" loading="lazy">
-        <button class="play-btn" aria-label="Play Sukhkarta Dukhharta">▶</button>
-      </div>
       <p class="song-credit"><strong>Sukhkarta Dukhharta</strong> — Ganpati Aarti, sung by Lata Mangeshkar</p>
+      <button class="play-chip" data-video-id="w0W8Wh-8UCg">▶ Play this song</button>
     </div>
   </section>
 
@@ -212,6 +181,20 @@
   </footer>
 
 </main>
+
+<div class="now-playing" id="nowPlaying">
+  <div class="np-thumb-wrap"><div id="npThumb"></div></div>
+  <div class="np-info">
+    <p class="np-title" id="npTitle">Ekla Cholo Re</p>
+    <p class="np-sub" id="npSub">Kolkata · Rasgulla &amp; Rasmalai</p>
+    <div class="np-eq" aria-hidden="true"><span></span><span></span><span></span></div>
+  </div>
+  <div class="np-controls">
+    <button id="npPrev" aria-label="Previous city">⏮</button>
+    <button id="npPlay" aria-label="Play or pause">▶</button>
+    <button id="npNext" aria-label="Next city">⏭</button>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
