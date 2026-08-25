@@ -136,7 +136,29 @@ atlasModal.addEventListener('click', (e) => {
   if (e.target === atlasModal) atlasModal.classList.remove('is-open');
 });
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') atlasModal.classList.remove('is-open');
+  if (e.key === 'Escape') {
+    atlasModal.classList.remove('is-open');
+    mapModal.classList.remove('is-open');
+  }
+});
+
+// --- map modal ---
+const mapModal = document.getElementById('mapModal');
+const mapOpen = document.getElementById('mapOpen');
+const mapClose = document.getElementById('mapClose');
+const mapPins = Array.from(document.querySelectorAll('.map-pin'));
+
+mapOpen.addEventListener('click', () => mapModal.classList.add('is-open'));
+mapClose.addEventListener('click', () => mapModal.classList.remove('is-open'));
+mapModal.addEventListener('click', (e) => {
+  if (e.target === mapModal) mapModal.classList.remove('is-open');
+});
+
+mapPins.forEach(pin => {
+  pin.addEventListener('click', () => {
+    mapModal.classList.remove('is-open');
+    goTo(parseInt(pin.dataset.index, 10), true);
+  });
 });
 
 // --- atlas region filter ---
