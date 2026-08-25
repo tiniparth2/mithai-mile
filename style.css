@@ -160,6 +160,11 @@ button { font-family: inherit; }
 .hero-explore:hover { transform: scale(1.05); }
 
 .hero-live {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1206,6 +1211,7 @@ button { font-family: inherit; }
   .scene-note { font-size: 0.88rem; }
   .hero-title { font-size: clamp(2.6rem, 14vw, 4rem); }
   .hero-sub { font-size: 0.92rem; }
+  .hero-live { top: 16px; font-size: 0.72rem; padding: 6px 13px; }
   .hero-ctas { gap: 10px; }
   .hero-explore, .hero-map-cta { padding: 13px 24px; font-size: 0.95rem; }
   .city-panel {

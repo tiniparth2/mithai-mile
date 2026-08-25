@@ -17,16 +17,32 @@ const npSub = document.getElementById('npSub');
 const npPlay = document.getElementById('npPlay');
 const nowPlaying = document.getElementById('nowPlaying');
 
+function postToPlayer(iframe, func) {
+  iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args: [] }), '*');
+}
+
 function renderThumb() {
   const scene = scenes[currentIndex];
   const id = videoIdOf(scene);
+  const existingIframe = npThumb.querySelector('iframe');
+  const sameSceneIframe = existingIframe && existingIframe.dataset.sceneIndex === String(currentIndex);
+
   if (isPlaying) {
-    const start = startOf(scene);
-    npThumb.innerHTML = `<iframe
-      src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0&playsinline=1&start=${start}"
-      title="now playing"
-      frameborder="0"
-      allow="autoplay; encrypted-media"></iframe>`;
+    if (sameSceneIframe) {
+      // same video already loaded (just paused) — resume in place, don't reload it
+      postToPlayer(existingIframe, 'playVideo');
+    } else {
+      const start = startOf(scene);
+      npThumb.innerHTML = `<iframe
+        data-scene-index="${currentIndex}"
+        src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0&playsinline=1&enablejsapi=1&start=${start}"
+        title="now playing"
+        frameborder="0"
+        allow="autoplay; encrypted-media"></iframe>`;
+    }
+  } else if (sameSceneIframe) {
+    // pause the live player instead of tearing it down, so resume picks up where it left off
+    postToPlayer(existingIframe, 'pauseVideo');
   } else {
     npThumb.innerHTML = `<img src="https://img.youtube.com/vi/${id}/default.jpg" alt="">`;
   }
