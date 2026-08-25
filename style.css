@@ -72,6 +72,21 @@ button { font-family: inherit; }
   font-size: 0.85rem;
 }
 
+.chrome-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+.chrome-actions .atlas-open,
+.chrome-actions .map-open {
+  font-size: 0.75rem;
+  padding: 8px 16px;
+}
+
 /* hero splash */
 .hero-splash {
   position: fixed;
@@ -663,7 +678,7 @@ button { font-family: inherit; }
 .nav-prev { left: 24px; }
 .nav-next { right: 24px; }
 
-/* one anchored bottom bar: dots on top, controls in a row beneath */
+/* one anchored bottom bar: dots on top, now-playing centred beneath */
 .bottom-bar {
   position: fixed;
   left: 0;
@@ -679,21 +694,6 @@ button { font-family: inherit; }
 }
 
 .bottom-bar > * { pointer-events: auto; }
-
-.bottom-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  width: 100%;
-  max-width: 1100px;
-  pointer-events: none;
-}
-
-.bottom-row > * { pointer-events: auto; }
-
-/* balances the toolbar's flex on the left so now-playing sits truly centred */
-.bottom-row::after { content: ''; flex: 1 1 0; }
 
 /* dots */
 .dots {
@@ -720,18 +720,8 @@ button { font-family: inherit; }
   transform: scale(1.3);
 }
 
-/* bottom-left toolbar: map + atlas openers */
-.bottom-toolbar {
-  display: flex;
-  gap: 10px;
-  flex-wrap: nowrap;
-  flex: 1 1 0;
-  min-width: 0;
-}
-
-.atlas-open, .map-open { white-space: nowrap; }
-
 .atlas-open, .map-open {
+  white-space: nowrap;
   padding: 10px 18px;
   border-radius: 999px;
   border: 1px solid rgba(43, 22, 8, 0.12);
@@ -1251,10 +1241,9 @@ button { font-family: inherit; }
   .nav-prev { left: 8px; }
   .nav-next { right: 8px; }
   .bottom-bar { gap: 10px; padding: 0 10px 12px; }
-  .bottom-row { flex-direction: column; gap: 10px; }
-  .bottom-row::after { display: none; }
-  .bottom-toolbar { gap: 6px; flex: 0 0 auto; justify-content: center; }
-  .atlas-open, .map-open { font-size: 0.68rem; padding: 7px 12px; }
+  .chrome-top { right: 12px; left: 12px; }
+  .chrome-actions { gap: 6px; }
+  .chrome-actions .atlas-open, .chrome-actions .map-open { font-size: 0.62rem; padding: 6px 11px; }
   .live-clock, .brand-pill { font-size: 0.62rem; padding: 5px 10px; }
   .now-playing { width: min(94vw, 380px); }
   .atlas-list { grid-template-columns: 1fr; }

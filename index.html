@@ -30,7 +30,11 @@
 
 <header class="chrome-top">
   <div class="live-clock" id="liveClock">-- : -- IST</div>
-  <div class="brand-pill">Mithaify</div>
+  <div class="chrome-actions">
+    <button class="map-open" id="mapOpen">&#128506; Explore the map</button>
+    <button class="atlas-open" id="atlasOpen">See all 100 sweets &rarr;</button>
+    <div class="brand-pill">Mithaify</div>
+  </div>
 </header>
 
 <main class="stage">
@@ -1042,24 +1046,17 @@
         <button class="dot" data-index="24" aria-label="Go to Kurukshetra"></button>
         <button class="dot" data-index="25" aria-label="Go to Kullu"></button>
   </div>
-  <div class="bottom-row">
-    <div class="bottom-toolbar">
-      <button class="map-open" id="mapOpen">&#128506; Explore the map</button>
-      <button class="atlas-open" id="atlasOpen">See all 100 sweets &rarr;</button>
+  <div class="now-playing" id="nowPlaying">
+    <div class="np-thumb-wrap"><div id="npThumb"></div></div>
+    <div class="np-info">
+      <p class="np-title" id="npTitle">Ekla Cholo Re</p>
+      <p class="np-sub" id="npSub">Kolkata &middot; Rasgulla &amp; Rasmalai</p>
+      <div class="np-eq" aria-hidden="true"><span></span><span></span><span></span></div>
     </div>
-
-    <div class="now-playing" id="nowPlaying">
-      <div class="np-thumb-wrap"><div id="npThumb"></div></div>
-      <div class="np-info">
-        <p class="np-title" id="npTitle">Ekla Cholo Re</p>
-        <p class="np-sub" id="npSub">Kolkata &middot; Rasgulla &amp; Rasmalai</p>
-        <div class="np-eq" aria-hidden="true"><span></span><span></span><span></span></div>
-      </div>
-      <div class="np-controls">
-        <button id="npPrev" aria-label="Previous city">&#9198;</button>
-        <button id="npPlay" aria-label="Play or pause">&#9654;</button>
-        <button id="npNext" aria-label="Next city">&#9197;</button>
-      </div>
+    <div class="np-controls">
+      <button id="npPrev" aria-label="Previous city">&#9198;</button>
+      <button id="npPlay" aria-label="Play or pause">&#9654;</button>
+      <button id="npNext" aria-label="Next city">&#9197;</button>
     </div>
   </div>
 </div>
