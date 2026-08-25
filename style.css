@@ -1118,7 +1118,7 @@ button { font-family: inherit; }
   border-radius: 18px;
   padding: 8px 14px 8px 8px;
   box-shadow: 0 20px 45px -18px rgba(0, 0, 0, 0.4);
-  width: min(92vw, 420px);
+  width: min(92vw, 460px);
   flex: 0 0 auto;
 }
 
@@ -1208,6 +1208,11 @@ button { font-family: inherit; }
 }
 
 .np-controls button:hover { background: var(--gold); }
+
+.np-controls button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(242, 178, 60, 0.5);
+}
 
 #npPlay { width: 36px; height: 36px; background: var(--gold); }
 
