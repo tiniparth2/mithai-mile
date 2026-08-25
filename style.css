@@ -343,7 +343,7 @@ button { font-family: inherit; }
   display: flex;
   flex-direction: column;
   gap: 14px;
-  padding: 90px 90px 140px 32px;
+  padding: 90px 90px 122px 32px;
   overflow-y: auto;
   overflow-x: hidden;
   border-left: 1px solid rgba(43, 22, 8, 0.08);
@@ -1228,7 +1228,7 @@ button { font-family: inherit; }
   .hero-ctas { gap: 10px; }
   .hero-explore, .hero-map-cta { padding: 13px 24px; font-size: 0.95rem; }
   .city-panel {
-    padding: 14px 16px 150px;
+    padding: 14px 16px 112px;
     border-left: none;
     border-top: 1px solid rgba(43, 22, 8, 0.08);
     gap: 8px;
