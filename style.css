@@ -52,7 +52,7 @@ button { font-family: inherit; }
   pointer-events: none;
 }
 
-.live-clock, .brand-pill {
+.live-clock {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -64,12 +64,6 @@ button { font-family: inherit; }
   border: 1px solid rgba(43, 22, 8, 0.1);
   box-shadow: 0 6px 16px -8px rgba(43, 22, 8, 0.3);
   backdrop-filter: blur(6px);
-}
-
-.brand-pill {
-  font-family: 'Baloo 2', sans-serif;
-  color: var(--ink);
-  font-size: 0.85rem;
 }
 
 .chrome-actions {
@@ -372,7 +366,8 @@ button { font-family: inherit; }
 .motif-credit {
   position: relative;
   z-index: 1;
-  margin-top: -6px;
+  margin-top: auto;
+  align-self: flex-start;
   font-size: 0.68rem;
   font-style: italic;
   color: var(--cream-dim);
@@ -1244,7 +1239,7 @@ button { font-family: inherit; }
   .chrome-top { right: 12px; left: 12px; }
   .chrome-actions { gap: 6px; }
   .chrome-actions .atlas-open, .chrome-actions .map-open { font-size: 0.62rem; padding: 6px 11px; }
-  .live-clock, .brand-pill { font-size: 0.62rem; padding: 5px 10px; }
+  .live-clock { font-size: 0.62rem; padding: 5px 10px; }
   .now-playing { width: min(94vw, 380px); }
   .atlas-list { grid-template-columns: 1fr; }
   .map-modal-inner { padding: 28px 16px 20px; }
