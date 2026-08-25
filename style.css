@@ -159,6 +159,37 @@ button { font-family: inherit; }
 
 .hero-explore:hover { transform: scale(1.05); }
 
+.hero-ctas {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-ctas .hero-explore { margin-top: 0; }
+
+.hero-map-cta {
+  padding: 15px 30px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 248, 236, 0.55);
+  background: rgba(255, 248, 236, 0.08);
+  color: var(--scene-text);
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-map-cta:hover {
+  transform: scale(1.05);
+  background: rgba(255, 248, 236, 0.16);
+  border-color: rgba(255, 248, 236, 0.85);
+}
+
 .hero-hint {
   font-size: 0.78rem;
   color: var(--scene-text-dim);
@@ -992,7 +1023,8 @@ button { font-family: inherit; }
   .scene-note { font-size: 0.88rem; }
   .hero-title { font-size: clamp(2.6rem, 14vw, 4rem); }
   .hero-sub { font-size: 0.92rem; }
-  .hero-explore { padding: 13px 26px; font-size: 1rem; }
+  .hero-ctas { gap: 10px; }
+  .hero-explore, .hero-map-cta { padding: 13px 24px; font-size: 0.95rem; }
   .city-panel {
     padding: 14px 16px 96px;
     border-left: none;

@@ -115,6 +115,13 @@ heroExplore.addEventListener('click', (e) => {
 });
 heroSplash.addEventListener('click', dismissHero);
 
+const heroMapCta = document.getElementById('heroMapCta');
+heroMapCta.addEventListener('click', (e) => {
+  e.stopPropagation();
+  dismissHero();
+  mapModal.classList.add('is-open');
+});
+
 // --- live IST clock ---
 function updateClock() {
   const time = new Intl.DateTimeFormat('en-IN', {
