@@ -7,6 +7,10 @@ function videoIdOf(scene) {
   return scene.querySelector('.scene-play').dataset.videoId;
 }
 
+function startOf(scene) {
+  return scene.querySelector('.scene-play').dataset.start || '0';
+}
+
 const npThumb = document.getElementById('npThumb');
 const npTitle = document.getElementById('npTitle');
 const npSub = document.getElementById('npSub');
@@ -14,10 +18,12 @@ const npPlay = document.getElementById('npPlay');
 const nowPlaying = document.getElementById('nowPlaying');
 
 function renderThumb() {
-  const id = videoIdOf(scenes[currentIndex]);
+  const scene = scenes[currentIndex];
+  const id = videoIdOf(scene);
   if (isPlaying) {
+    const start = startOf(scene);
     npThumb.innerHTML = `<iframe
-      src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0&playsinline=1"
+      src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0&playsinline=1&start=${start}"
       title="now playing"
       frameborder="0"
       allow="autoplay; encrypted-media"></iframe>`;
@@ -87,6 +93,27 @@ scenes.forEach((scene, index) => {
 
 // initial idle state: first scene cued, not playing
 setActive(0, false);
+
+// --- hero splash: try to autoplay Kolkata's song behind it; Explore reveals the stage ---
+const heroSplash = document.getElementById('heroSplash');
+const heroExplore = document.getElementById('heroExplore');
+
+// attempt autoplay immediately; browsers usually block sound-on until a real
+// user gesture, so this is a best-effort — the hint text covers the fallback
+setActive(0, true);
+
+function dismissHero() {
+  heroSplash.classList.add('is-hidden');
+  // this click is a genuine user gesture, so retry play in case the earlier
+  // autoplay attempt was silently blocked by the browser
+  setActive(currentIndex, true);
+}
+
+heroExplore.addEventListener('click', (e) => {
+  e.stopPropagation();
+  dismissHero();
+});
+heroSplash.addEventListener('click', dismissHero);
 
 // --- live IST clock ---
 function updateClock() {
