@@ -4,11 +4,11 @@ let currentIndex = 0;
 let isPlaying = false;
 
 function videoIdOf(scene) {
-  return scene.querySelector('.scene-play').dataset.videoId;
+  return scene.dataset.videoId;
 }
 
 function startOf(scene) {
-  return scene.querySelector('.scene-play').dataset.start || '0';
+  return scene.dataset.start || '0';
 }
 
 const npThumb = document.getElementById('npThumb');
@@ -32,15 +32,6 @@ function renderThumb() {
   }
 }
 
-function syncSceneButtons() {
-  scenes.forEach((s, i) => {
-    const btn = s.querySelector('.scene-play');
-    const active = i === currentIndex && isPlaying;
-    btn.classList.toggle('is-active', active);
-    btn.innerHTML = active ? '&#10074;&#10074;' : '&#9654;';
-  });
-}
-
 function setActive(index, playNow) {
   currentIndex = index;
   isPlaying = playNow;
@@ -48,12 +39,11 @@ function setActive(index, playNow) {
   dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
 
   const s = scenes[index];
-  npTitle.textContent = s.querySelector('.scene-credit strong').textContent;
+  npTitle.textContent = s.dataset.song;
   npSub.textContent = `${s.querySelector('.scene-eyebrow').textContent} · ${s.querySelector('.scene-title').textContent}`;
   npPlay.textContent = isPlaying ? '⏸' : '▶';
   nowPlaying.classList.toggle('playing', isPlaying);
   renderThumb();
-  syncSceneButtons();
 }
 
 function goTo(index, playNow) {
@@ -79,17 +69,6 @@ document.addEventListener('keydown', (e) => {
 npPlay.addEventListener('click', () => setActive(currentIndex, !isPlaying));
 document.getElementById('npPrev').addEventListener('click', () => goTo(currentIndex - 1, isPlaying));
 document.getElementById('npNext').addEventListener('click', () => goTo(currentIndex + 1, isPlaying));
-
-// --- per-scene play buttons: click toggles if current, otherwise jumps to it ---
-scenes.forEach((scene, index) => {
-  scene.querySelector('.scene-play').addEventListener('click', () => {
-    if (index === currentIndex) {
-      setActive(index, !isPlaying);
-    } else {
-      setActive(index, true);
-    }
-  });
-});
 
 // initial idle state: first scene cued, not playing
 setActive(0, false);
@@ -121,6 +100,15 @@ heroMapCta.addEventListener('click', (e) => {
   dismissHero();
   mapModal.classList.add('is-open');
 });
+
+// --- ambient "online" count: ticks gently up/down for a live feel ---
+const heroLiveCount = document.getElementById('heroLiveCount');
+let liveCount = parseInt(heroLiveCount.textContent, 10);
+setInterval(() => {
+  const delta = Math.floor(Math.random() * 5) - 2;
+  liveCount = Math.min(48, Math.max(14, liveCount + delta));
+  heroLiveCount.textContent = liveCount;
+}, 4000);
 
 // --- live IST clock ---
 function updateClock() {
