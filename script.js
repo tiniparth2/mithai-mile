@@ -29,7 +29,7 @@ function renderThumb() {
 
   if (isPlaying) {
     if (sameSceneIframe) {
-      // same video already loaded (just paused) — resume in place, don't reload it
+      // same video already loaded (just paused), so resume in place, don't reload it
       postToPlayer(existingIframe, 'playVideo');
     } else {
       const start = startOf(scene);
@@ -94,7 +94,7 @@ const heroSplash = document.getElementById('heroSplash');
 const heroExplore = document.getElementById('heroExplore');
 
 // attempt autoplay immediately; browsers usually block sound-on until a real
-// user gesture, so this is a best-effort — the hint text covers the fallback
+// user gesture, so this is a best-effort. The hint text covers the fallback
 setActive(0, true);
 
 function dismissHero() {

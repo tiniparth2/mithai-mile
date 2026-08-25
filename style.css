@@ -340,7 +340,7 @@ button { font-family: inherit; }
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9), 0 2px 12px rgba(0, 0, 0, 0.75);
 }
 
-/* right: the city — a bento of info cells */
+/* right: the city, a bento of info cells */
 .city-panel {
   position: relative;
   height: 100%;
@@ -355,7 +355,7 @@ button { font-family: inherit; }
   border-left: 1px solid rgba(43, 22, 8, 0.08);
 }
 
-/* a quiet cultural motif behind the bento cards, tinted per city —
+/* a quiet cultural motif behind the bento cards, tinted per city.
    each city gets the real folk-art / craft pattern tied to its own
    region (see MOTIF_LABELS in build_index.py for sourcing) */
 .city-motif {
