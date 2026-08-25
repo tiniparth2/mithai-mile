@@ -366,7 +366,7 @@ button { font-family: inherit; }
 .motif-credit {
   position: relative;
   z-index: 1;
-  margin-top: auto;
+  margin-top: 2px;
   align-self: flex-start;
   font-size: 0.68rem;
   font-style: italic;
@@ -636,7 +636,7 @@ button { font-family: inherit; }
   position: relative;
   z-index: 1;
   align-self: flex-start;
-  margin-top: 2px;
+  margin-top: auto;
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--accent, var(--gold));
