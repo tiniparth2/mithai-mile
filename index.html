@@ -639,7 +639,7 @@
     </div>
     <div class="scene" data-index="16" data-video-id="q1w95jUCHDU" data-start="17" data-song="Bebdo" style="--accent:#2f9ea8">
       <div class="sweet-panel">
-        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Bebinca,_a_delicacy_and_sweet_from_Goa.jpg/500px-Bebinca,_a_delicacy_and_sweet_from_Goa.jpg" alt="Bebinca, a layered Indo-Portuguese Goan cake">
+        <img class="scene-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Home_Made_Bebinca_from_Goa_India.jpg/500px-Home_Made_Bebinca_from_Goa_India.jpg" alt="A home-made Goan bebinca with a slice cut to show its layers">
         <div class="scene-scrim" aria-hidden="true"></div>
         <div class="sweet-header">
           <p class="scene-eyebrow">Panaji, Goa</p>
@@ -1011,6 +1011,9 @@
   <button class="nav-arrow nav-prev" id="prevBtn" aria-label="Previous city">&#8592;</button>
   <button class="nav-arrow nav-next" id="nextBtn" aria-label="Next city">&#8594;</button>
 
+</main>
+
+<div class="bottom-bar">
   <div class="dots" id="dots">
         <button class="dot is-active" data-index="0" aria-label="Go to Kolkata"></button>
         <button class="dot" data-index="1" aria-label="Go to Jaipur"></button>
@@ -1039,11 +1042,26 @@
         <button class="dot" data-index="24" aria-label="Go to Kurukshetra"></button>
         <button class="dot" data-index="25" aria-label="Go to Kullu"></button>
   </div>
-</main>
+  <div class="bottom-row">
+    <div class="bottom-toolbar">
+      <button class="map-open" id="mapOpen">&#128506; Explore the map</button>
+      <button class="atlas-open" id="atlasOpen">See all 100 sweets &rarr;</button>
+    </div>
 
-<div class="bottom-toolbar">
-  <button class="map-open" id="mapOpen">&#128506; Explore the map</button>
-  <button class="atlas-open" id="atlasOpen">See all 100 sweets, by region &rarr;</button>
+    <div class="now-playing" id="nowPlaying">
+      <div class="np-thumb-wrap"><div id="npThumb"></div></div>
+      <div class="np-info">
+        <p class="np-title" id="npTitle">Ekla Cholo Re</p>
+        <p class="np-sub" id="npSub">Kolkata &middot; Rasgulla &amp; Rasmalai</p>
+        <div class="np-eq" aria-hidden="true"><span></span><span></span><span></span></div>
+      </div>
+      <div class="np-controls">
+        <button id="npPrev" aria-label="Previous city">&#9198;</button>
+        <button id="npPlay" aria-label="Play or pause">&#9654;</button>
+        <button id="npNext" aria-label="Next city">&#9197;</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="atlas-modal" id="atlasModal" aria-hidden="true">
@@ -1789,7 +1807,7 @@
       <button class="map-pin" style="left:21.34%; top:67.70%; --accent:#2f9ea8; --i:16" data-index="16" aria-label="Jump to Panaji — Bebinca">
         <span class="map-pin-dot"></span>
         <span class="map-pin-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Bebinca,_a_delicacy_and_sweet_from_Goa.jpg/500px-Bebinca,_a_delicacy_and_sweet_from_Goa.jpg" alt="" loading="lazy">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Home_Made_Bebinca_from_Goa_India.jpg/500px-Home_Made_Bebinca_from_Goa_India.jpg" alt="" loading="lazy">
           <span class="map-pin-card-text">
             <strong>Panaji</strong>
             <em>Bebinca</em>
@@ -1913,20 +1931,6 @@
       <button class="hero-map-cta" id="heroMapCta">&#128506; See the map</button>
     </div>
     <p class="hero-hint" id="heroHint">tap anywhere to start the music</p>
-  </div>
-</div>
-
-<div class="now-playing" id="nowPlaying">
-  <div class="np-thumb-wrap"><div id="npThumb"></div></div>
-  <div class="np-info">
-    <p class="np-title" id="npTitle">Ekla Cholo Re</p>
-    <p class="np-sub" id="npSub">Kolkata · Rasgulla &amp; Rasmalai</p>
-    <div class="np-eq" aria-hidden="true"><span></span><span></span><span></span></div>
-  </div>
-  <div class="np-controls">
-    <button id="npPrev" aria-label="Previous city">&#9198;</button>
-    <button id="npPlay" aria-label="Play or pause">&#9654;</button>
-    <button id="npNext" aria-label="Next city">&#9197;</button>
   </div>
 </div>
 
