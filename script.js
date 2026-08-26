@@ -81,6 +81,89 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') goTo(currentIndex + 1, isPlaying);
 });
 
+// --- swipe between cities on touch devices ---
+// The city panel scrolls vertically, so the gesture locks to one axis on the
+// first few pixels of movement and only hijacks the ones that are horizontal.
+const stage = document.querySelector('.stage');
+let startX = 0, startY = 0, axis = null, swiping = false;
+
+const swipeHint = document.getElementById('swipeHint');
+let hintGone = false;
+function dismissSwipeHint() {
+  if (hintGone) return;
+  hintGone = true;
+  swipeHint.classList.add('is-gone');
+}
+// clears itself if nobody swipes, so it never becomes furniture
+setTimeout(dismissSwipeHint, 6000);
+
+function modalOpen() {
+  return document.getElementById('atlasModal').classList.contains('is-open')
+      || document.getElementById('mapModal').classList.contains('is-open');
+}
+
+function resetDrag(scene) {
+  scene.style.transition = '';
+  scene.style.transform = '';
+}
+
+stage.addEventListener('touchstart', (e) => {
+  if (e.touches.length !== 1 || modalOpen()) return;
+  startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
+  axis = null;
+  swiping = true;
+}, { passive: true });
+
+stage.addEventListener('touchmove', (e) => {
+  if (!swiping) return;
+  const dx = e.touches[0].clientX - startX;
+  const dy = e.touches[0].clientY - startY;
+
+  if (axis === null) {
+    if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+    // needs to be clearly sideways, otherwise let the panel scroll
+    axis = Math.abs(dx) > Math.abs(dy) * 1.4 ? 'x' : 'y';
+  }
+  if (axis !== 'x') return;
+
+  e.preventDefault();
+  const scene = scenes[currentIndex];
+  scene.style.transition = 'none';
+  // damped so the card follows the thumb without running off screen
+  scene.style.transform = `translateX(${dx * 0.4}px)`;
+}, { passive: false });
+
+stage.addEventListener('touchend', (e) => {
+  if (!swiping) return;
+  swiping = false;
+  const scene = scenes[currentIndex];
+  if (axis !== 'x') return;
+
+  const dx = e.changedTouches[0].clientX - startX;
+  resetDrag(scene);
+
+  if (Math.abs(dx) > 55) {
+    dismissSwipeHint();
+    const dir = dx < 0 ? 1 : -1;
+    goTo(currentIndex + dir, isPlaying);
+    const incoming = scenes[currentIndex];
+    incoming.classList.remove('slide-from-right', 'slide-from-left');
+    // reflow so the animation restarts on a rapid second swipe
+    void incoming.offsetWidth;
+    incoming.classList.add(dir === 1 ? 'slide-from-right' : 'slide-from-left');
+    incoming.addEventListener('animationend', function clear() {
+      incoming.classList.remove('slide-from-right', 'slide-from-left');
+      incoming.removeEventListener('animationend', clear);
+    });
+  }
+}, { passive: true });
+
+stage.addEventListener('touchcancel', () => {
+  if (swiping) resetDrag(scenes[currentIndex]);
+  swiping = false;
+}, { passive: true });
+
 // --- transport controls ---
 npPlay.addEventListener('click', () => setActive(currentIndex, !isPlaying));
 document.getElementById('npPrev').addEventListener('click', () => goTo(currentIndex - 1, isPlaying));

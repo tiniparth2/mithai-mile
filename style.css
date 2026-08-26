@@ -249,6 +249,8 @@ button { font-family: inherit; }
   height: 100svh;
   overflow: hidden;
   background: var(--ink);
+  /* let vertical scrolling through, keep horizontal for the swipe handler */
+  touch-action: pan-y;
 }
 
 .scene {
@@ -265,6 +267,24 @@ button { font-family: inherit; }
   opacity: 1;
   visibility: visible;
   z-index: 2;
+}
+
+/* the incoming card after a swipe, entering from the side it came from */
+.scene.slide-from-right { animation: scene-in-right 0.26s ease both; }
+.scene.slide-from-left { animation: scene-in-left 0.26s ease both; }
+
+@keyframes scene-in-right {
+  from { transform: translateX(16%); opacity: 0.25; }
+  to { transform: none; opacity: 1; }
+}
+
+@keyframes scene-in-left {
+  from { transform: translateX(-16%); opacity: 0.25; }
+  to { transform: none; opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene.slide-from-right, .scene.slide-from-left { animation: none; }
 }
 
 /* left: the sweet */
@@ -1209,6 +1229,15 @@ button { font-family: inherit; }
 /* phone fallback for the map: a scannable list, hidden on desktop */
 .map-list { display: none; }
 
+/* swipe affordance, phone only, fades once the gesture has been used */
+.swipe-hint { display: none; }
+
+.swipe-hint.is-gone {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
 @keyframes pin-pop {
   from { opacity: 0; transform: translate(-50%, -60%) scale(0.3); }
   to { opacity: 1; transform: translate(-50%, -100%) scale(1); }
@@ -1358,6 +1387,25 @@ button { font-family: inherit; }
   .map-canvas { max-width: 100%; }
   .map-pin-dot { width: 13px; height: 13px; }
   .map-pin-card { display: none; }
+
+  .swipe-hint {
+    display: block;
+    position: fixed;
+    left: 50%;
+    bottom: 122px;
+    transform: translateX(-50%);
+    z-index: 55;
+    margin: 0;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(20, 12, 5, 0.42);
+    color: var(--scene-text-dim);
+    font-size: 0.66rem;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    backdrop-filter: blur(3px);
+    pointer-events: none;
+  }
 
   /* the map stays as orientation, the list is what you actually tap */
   .map-list {
