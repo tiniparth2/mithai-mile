@@ -157,7 +157,8 @@ document.addEventListener('keydown', (e) => {
 const mapModal = document.getElementById('mapModal');
 const mapOpen = document.getElementById('mapOpen');
 const mapClose = document.getElementById('mapClose');
-const mapPins = Array.from(document.querySelectorAll('.map-pin'));
+// pins on the map and rows in the phone list both carry data-index
+const mapPins = Array.from(document.querySelectorAll('.map-pin, .map-list-item'));
 
 mapOpen.addEventListener('click', () => mapModal.classList.add('is-open'));
 mapClose.addEventListener('click', () => mapModal.classList.remove('is-open'));
