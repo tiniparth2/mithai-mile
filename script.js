@@ -68,17 +68,19 @@ function goTo(index, playNow) {
 }
 
 // --- carousel navigation ---
-document.getElementById('prevBtn').addEventListener('click', () => goTo(currentIndex - 1, isPlaying));
-document.getElementById('nextBtn').addEventListener('click', () => goTo(currentIndex + 1, isPlaying));
+// every way of switching cities is a real user gesture, so each one plays
+// the new song rather than carrying over whatever the paused/playing state was
+document.getElementById('prevBtn').addEventListener('click', () => goTo(currentIndex - 1, true));
+document.getElementById('nextBtn').addEventListener('click', () => goTo(currentIndex + 1, true));
 
 dots.forEach(dot => {
-  dot.addEventListener('click', () => goTo(parseInt(dot.dataset.index, 10), isPlaying));
+  dot.addEventListener('click', () => goTo(parseInt(dot.dataset.index, 10), true));
 });
 
 document.addEventListener('keydown', (e) => {
   if (document.getElementById('atlasModal').classList.contains('is-open')) return;
-  if (e.key === 'ArrowLeft') goTo(currentIndex - 1, isPlaying);
-  if (e.key === 'ArrowRight') goTo(currentIndex + 1, isPlaying);
+  if (e.key === 'ArrowLeft') goTo(currentIndex - 1, true);
+  if (e.key === 'ArrowRight') goTo(currentIndex + 1, true);
 });
 
 // --- swipe between cities on touch devices ---
@@ -146,7 +148,7 @@ stage.addEventListener('touchend', (e) => {
   if (Math.abs(dx) > 55) {
     dismissSwipeHint();
     const dir = dx < 0 ? 1 : -1;
-    goTo(currentIndex + dir, isPlaying);
+    goTo(currentIndex + dir, true);
     const incoming = scenes[currentIndex];
     incoming.classList.remove('slide-from-right', 'slide-from-left');
     // reflow so the animation restarts on a rapid second swipe
@@ -166,8 +168,8 @@ stage.addEventListener('touchcancel', () => {
 
 // --- transport controls ---
 npPlay.addEventListener('click', () => setActive(currentIndex, !isPlaying));
-document.getElementById('npPrev').addEventListener('click', () => goTo(currentIndex - 1, isPlaying));
-document.getElementById('npNext').addEventListener('click', () => goTo(currentIndex + 1, isPlaying));
+document.getElementById('npPrev').addEventListener('click', () => goTo(currentIndex - 1, true));
+document.getElementById('npNext').addEventListener('click', () => goTo(currentIndex + 1, true));
 
 // initial idle state: first scene cued, not playing
 setActive(0, false);
