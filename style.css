@@ -585,6 +585,27 @@ button { font-family: inherit; }
   -webkit-mask-size: 80px 40px; mask-size: 80px 40px;
 }
 
+/* Kani shawl: twill-woven diamond lattice, each cell holding a small bud */
+.motif-kanishawl {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='70' height='70'><g fill='none' stroke='black' stroke-width='1.2'><path d='M35 5 L65 35 L35 65 L5 35 Z'/></g><g fill='black'><ellipse cx='35' cy='27' rx='4' ry='7'/><ellipse cx='35' cy='43' rx='4' ry='7'/><ellipse cx='27' cy='35' rx='7' ry='4'/><ellipse cx='43' cy='35' rx='7' ry='4'/></g></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='70' height='70'><g fill='none' stroke='black' stroke-width='1.2'><path d='M35 5 L65 35 L35 65 L5 35 Z'/></g><g fill='black'><ellipse cx='35' cy='27' rx='4' ry='7'/><ellipse cx='35' cy='43' rx='4' ry='7'/><ellipse cx='27' cy='35' rx='7' ry='4'/><ellipse cx='43' cy='35' rx='7' ry='4'/></g></svg>");
+  -webkit-mask-size: 70px 70px; mask-size: 70px 70px;
+}
+
+/* Parsi Gara: a crane silhouette beside a Chinese-influenced floral sprig */
+.motif-parsigara {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='130' height='90'><g fill='black'><path d='M20 70 C15 55 25 40 38 42 C40 30 55 22 62 30 C58 34 55 40 58 46 C68 44 74 52 68 58 C74 60 74 68 66 68 C64 74 54 74 50 66 C42 70 28 72 20 70 Z'/><circle cx='58' cy='30' r='3'/></g><g fill='black'><circle cx='100' cy='55' r='6'/><ellipse cx='100' cy='42' rx='5' ry='9'/><ellipse cx='100' cy='68' rx='5' ry='9'/><ellipse cx='87' cy='55' rx='9' ry='5'/><ellipse cx='113' cy='55' rx='9' ry='5'/></g></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='130' height='90'><g fill='black'><path d='M20 70 C15 55 25 40 38 42 C40 30 55 22 62 30 C58 34 55 40 58 46 C68 44 74 52 68 58 C74 60 74 68 66 68 C64 74 54 74 50 66 C42 70 28 72 20 70 Z'/><circle cx='58' cy='30' r='3'/></g><g fill='black'><circle cx='100' cy='55' r='6'/><ellipse cx='100' cy='42' rx='5' ry='9'/><ellipse cx='100' cy='68' rx='5' ry='9'/><ellipse cx='87' cy='55' rx='9' ry='5'/><ellipse cx='113' cy='55' rx='9' ry='5'/></g></svg>");
+  -webkit-mask-size: 130px 90px; mask-size: 130px 90px;
+}
+
+/* Mainpuri Tarkashi: a radiating wire-inlay sunburst with dot terminals */
+.motif-tarkashi {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80'><g fill='none' stroke='black' stroke-width='0.9'><path d='M40 40 L40 5 M40 40 L40 75 M40 40 L5 40 M40 40 L75 40 M40 40 L15 15 M40 40 L65 15 M40 40 L15 65 M40 40 L65 65'/></g><g fill='black'><circle cx='40' cy='40' r='4'/><circle cx='40' cy='5' r='1.6'/><circle cx='40' cy='75' r='1.6'/><circle cx='5' cy='40' r='1.6'/><circle cx='75' cy='40' r='1.6'/></g></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80'><g fill='none' stroke='black' stroke-width='0.9'><path d='M40 40 L40 5 M40 40 L40 75 M40 40 L5 40 M40 40 L75 40 M40 40 L15 15 M40 40 L65 15 M40 40 L15 65 M40 40 L65 65'/></g><g fill='black'><circle cx='40' cy='40' r='4'/><circle cx='40' cy='5' r='1.6'/><circle cx='40' cy='75' r='1.6'/><circle cx='5' cy='40' r='1.6'/><circle cx='75' cy='40' r='1.6'/></g></svg>");
+  -webkit-mask-size: 80px 80px; mask-size: 80px 80px;
+}
+
 .bento-cell { flex: 0 0 auto; }
 
 .bento-cell {
