@@ -7,6 +7,11 @@ Reconstructed 2026-08-31 from the deployed index.html after the original
 scratchpad copy of this script was lost to a session change. If you edit
 this file, keep the static chunks (PRE_STAGE, MID_TAIL_1, etc.) untouched
 unless you're deliberately changing that part of the page shell.
+
+The TAIL chunk includes the Vercel Web Analytics script tag
+(/_vercel/insights/script.js). That only reports data once Web
+Analytics is switched on for this project in the Vercel dashboard
+(Project -> Analytics -> Enable) -- the tag is inert until then.
 """
 import os
 import pickle
