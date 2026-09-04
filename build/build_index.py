@@ -19,7 +19,9 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from cities import CITIES
+from cities import CITIES, HERO_PHOTO
+from images import (deferred_attrs, responsive_attrs, thumb,
+                    upgrade_atlas_images)
 
 with open(os.path.join(HERE, "_bootstrap.pkl"), "rb") as f:
     _boot = pickle.load(f)
@@ -51,6 +53,75 @@ COORDS = {
 }
 
 
+# --- image sizing ---------------------------------------------------------
+# Widths must come from images.STANDARD_WIDTHS: Wikimedia rejects hotlinked
+# thumbnails at any other size. Each slot picks the steps that bracket how
+# large it actually renders. Everything used to be served at a flat 500px,
+# which was 2-3x too small for the full-bleed photos on a retina phone and ~8x
+# too large for the 64px landmark chips.
+
+# full-bleed, behind the posterize filter, so it needs real resolution
+SCENE_WIDTHS = [500, 960, 1280, 1920]
+SCENE_SIZES = "(max-width: 860px) 100vw, 54vw"   # .scene is a 1.15fr/1fr grid
+SCENE_PLACEHOLDER = 330      # what they all ship with; script.js upgrades on view
+
+HERO_WIDTHS = [500, 960, 1280, 1920]   # the source itself is only 1280 wide
+HERO_SIZES = "100vw"
+
+LANDMARK_WIDTH = 250         # rendered in a 64px box (44px under 860px)
+MAP_PIN_WIDTH = 120          # rendered in a 40px box
+
+ATLAS_WIDTHS = [330, 500, 960]
+ATLAS_SIZES = "(max-width: 520px) 92vw, 240px"   # grid is minmax(215px, 1fr)
+
+
+# The atlas section is a static file of 93 plain <img> tags and the hero photo
+# lives inside the pickled HERO_BLOCK chunk, so both get their srcsets applied
+# here rather than at the tag level.
+ATLAS_SECTION = upgrade_atlas_images(ATLAS_SECTION, ATLAS_WIDTHS, ATLAS_SIZES)
+
+# The hero copy quoted "Eleven states" and "Twenty-six cities" long after the
+# data had grown past both, so the counts are now derived from CITIES and the
+# atlas rather than typed in.
+_ONES = ("zero", "one", "two", "three", "four", "five", "six", "seven", "eight",
+         "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen",
+         "sixteen", "seventeen", "eighteen", "nineteen")
+_TENS = ("", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy",
+         "eighty", "ninety")
+
+
+def spell(n):
+    if n < 20:
+        word = _ONES[n]
+    elif n < 100:
+        tens, ones = divmod(n, 10)
+        word = _TENS[tens] + (f"-{_ONES[ones]}" if ones else "")
+    elif n % 100 == 0:
+        word = f"{_ONES[n // 100]} hundred"
+    else:
+        word = f"{_ONES[n // 100]} hundred {spell(n % 100)}"
+    return word
+
+
+CITY_COUNT = len(CITIES)
+STATE_COUNT = len({c["region"].split(", ")[-1] for c in CITIES})
+SWEET_COUNT = ATLAS_SECTION.count('class="atlas-card"')
+
+HERO_SUB_OLD = ("Eleven states get one song each. Twenty-six cities, one hundred "
+                "sweets, the whole map of what India makes with sugar and ghee.")
+HERO_SUB_NEW = (f"{spell(CITY_COUNT).capitalize()} cities, one song each. "
+                f"{spell(STATE_COUNT).capitalize()} states, {spell(SWEET_COUNT)} "
+                "sweets, the whole map of what India makes with sugar and ghee.")
+assert HERO_SUB_OLD in CHUNKS["HERO_BLOCK"], "hero sub copy moved"
+CHUNKS["HERO_BLOCK"] = CHUNKS["HERO_BLOCK"].replace(HERO_SUB_OLD, HERO_SUB_NEW, 1)
+
+HERO_IMG_OLD = '<img class="hero-photo" src="%s"' % HERO_PHOTO
+HERO_IMG_NEW = '<img class="hero-photo" fetchpriority="high" %s' % responsive_attrs(
+    HERO_PHOTO, HERO_WIDTHS, HERO_SIZES, fallback=960)
+assert HERO_IMG_OLD in CHUNKS["HERO_BLOCK"], "hero img tag moved; update HERO_PHOTO"
+CHUNKS["HERO_BLOCK"] = CHUNKS["HERO_BLOCK"].replace(HERO_IMG_OLD, HERO_IMG_NEW, 1)
+
+
 def esc(s):
     return (str(s).replace("&", "&amp;").replace('"', "&quot;")
             .replace("<", "&lt;").replace(">", "&gt;"))
@@ -65,7 +136,7 @@ for i, c in enumerate(CITIES):
 
     scenes.append(f'''    <div class="scene{active}" data-index="{i}" data-video-id="{c['video']}" data-start="{c['start']}" data-song="{esc(c['song'])}" style="--accent:{c['accent']}">
       <div class="sweet-panel">
-        <img class="scene-photo" src="{c['bg']}" alt="{esc(c['bg_alt'])}">
+        <img class="scene-photo" {deferred_attrs(c['bg'], SCENE_WIDTHS, SCENE_SIZES, SCENE_PLACEHOLDER)} alt="{esc(c['bg_alt'])}">
         <div class="scene-scrim" aria-hidden="true"></div>
         <div class="sweet-header">
           <p class="scene-eyebrow">{esc(c['region'])}</p>
@@ -78,7 +149,7 @@ for i, c in enumerate(CITIES):
       <div class="city-panel">
         <div class="city-motif motif-{c['motif']}" title="Backdrop motif: {motif_label}" aria-hidden="true"></div>
         <div class="bento-cell bento-landmark">
-          <img src="{c['landmark_img']}" alt="{esc(c['landmark_name'])}, {esc(c['region'])}" loading="lazy">
+          <img src="{thumb(c['landmark_img'], LANDMARK_WIDTH)}" alt="{esc(c['landmark_name'])}, {esc(c['region'])}" loading="lazy">
           <div>
             <span class="bento-label">Landmark</span>
             <h3>{esc(c['landmark_name'])}</h3>
@@ -114,7 +185,7 @@ for i, c in enumerate(CITIES):
     pins.append(f'''      <button class="{" ".join(pin_classes)}" style="left:{x:.2f}%; top:{y:.2f}%; --accent:{c['accent']}; --i:{i}" data-index="{i}" aria-label="Jump to {c['city']}, {esc(c['sweet'])}">
         <span class="map-pin-dot"></span>
         <span class="map-pin-card">
-          <img src="{c['bg']}" alt="" loading="lazy">
+          <img src="{thumb(c['bg'], MAP_PIN_WIDTH)}" alt="" loading="lazy">
           <span class="map-pin-card-text">
             <strong>{c['city']}</strong>
             <em>{esc(c['sweet'])}</em>

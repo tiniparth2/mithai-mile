@@ -48,9 +48,32 @@ function renderThumb() {
   }
 }
 
+// --- scene photo resolution ---
+// All 26 scenes are stacked in the viewport under `visibility: hidden`, so the
+// browser downloads every scene photo on load. Each therefore ships a light
+// placeholder with its real srcset parked in data-srcset, and the current city
+// plus the two either side get promoted to full resolution as they come into
+// play. Swiping never outruns it, and the page never pulls 26 full-size photos.
+function upgradePhoto(scene) {
+  const img = scene.querySelector('.scene-photo');
+  if (!img || !img.dataset.srcset) return;
+  // sizes has to land before srcset, or the browser picks a candidate against
+  // a default 100vw and downloads a larger file than the slot needs
+  img.sizes = img.dataset.sizes;
+  img.srcset = img.dataset.srcset;
+  delete img.dataset.sizes;
+  delete img.dataset.srcset;
+}
+
+function upgradeNeighbourhood(index) {
+  const n = scenes.length;
+  [index, (index + 1) % n, (index - 1 + n) % n].forEach(i => upgradePhoto(scenes[i]));
+}
+
 function setActive(index, playNow) {
   currentIndex = index;
   isPlaying = playNow;
+  upgradeNeighbourhood(index);
   scenes.forEach((s, i) => s.classList.toggle('is-active', i === index));
   dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
 
