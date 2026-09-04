@@ -107,6 +107,23 @@ CITY_COUNT = len(CITIES)
 STATE_COUNT = len({c["region"].split(", ")[-1] for c in CITIES})
 SWEET_COUNT = ATLAS_SECTION.count('class="atlas-card"')
 
+# The 29 dots that used to sit here were unreadable as navigation: no names, no
+# sense of position, no way to find a city you wanted. They are now a scrolling
+# rail of city names with a counter, so the whole list is visible and countable.
+RAIL_OPEN_OLD = '<div class="dots" id="dots">'
+RAIL_OPEN_NEW = (
+    '<div class="city-rail-wrap">\n'
+    '    <span class="rail-count"><b id="railPos">1</b> / %d</span>\n'
+    '    <div class="city-rail" id="cityRail" role="tablist" aria-label="Cities">'
+) % len(CITIES)
+assert RAIL_OPEN_OLD in CHUNKS["MID_TAIL_1"], "dots container moved"
+CHUNKS["MID_TAIL_1"] = CHUNKS["MID_TAIL_1"].replace(RAIL_OPEN_OLD, RAIL_OPEN_NEW, 1)
+
+RAIL_CLOSE_OLD = '</div>\n  <div class="now-playing"'
+RAIL_CLOSE_NEW = '</div>\n  </div>\n  <div class="now-playing"'
+assert RAIL_CLOSE_OLD in CHUNKS["MID_TAIL_2"], "now-playing block moved"
+CHUNKS["MID_TAIL_2"] = CHUNKS["MID_TAIL_2"].replace(RAIL_CLOSE_OLD, RAIL_CLOSE_NEW, 1)
+
 HERO_SUB_OLD = ("Eleven states get one song each. Twenty-six cities, one hundred "
                 "sweets, the whole map of what India makes with sugar and ghee.")
 HERO_SUB_NEW = (f"{spell(CITY_COUNT).capitalize()} cities, one song each. "
@@ -170,7 +187,9 @@ for i, c in enumerate(CITIES):
       </div>
     </div>''')
 
-    dots.append(f'        <button class="dot{" is-active" if i == 0 else ""}" data-index="{i}" aria-label="Go to {c["city"]}"></button>')
+    dots.append(
+        f'        <button class="rail-city{" is-active" if i == 0 else ""}" '
+        f'data-index="{i}" style="--accent:{c["accent"]}">{c["city"]}</button>')
 
     lat, lon = COORDS[c["city"]]
     x = (lon - LEFT_LON) / (RIGHT_LON - LEFT_LON) * 100

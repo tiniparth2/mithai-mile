@@ -1,5 +1,7 @@
 const scenes = Array.from(document.querySelectorAll('.scene'));
-const dots = Array.from(document.querySelectorAll('.dot'));
+const railCities = Array.from(document.querySelectorAll('.rail-city'));
+const cityRail = document.getElementById('cityRail');
+const railPos = document.getElementById('railPos');
 let currentIndex = 0;
 let isPlaying = false;
 
@@ -70,12 +72,38 @@ function upgradeNeighbourhood(index) {
   [index, (index + 1) % n, (index - 1 + n) % n].forEach(i => upgradePhoto(scenes[i]));
 }
 
+// keeps the current city centred in the rail, so the names either side of it
+// are always the ones you are about to reach. Sets scrollLeft directly rather
+// than calling scrollIntoView, which would also scroll the page itself.
+let railSettled = false;
+function centreRail(index) {
+  const btn = railCities[index];
+  if (!btn) return;
+  // measured off the rendered boxes rather than offsetLeft, which resolves
+  // against .bottom-bar (the nearest positioned ancestor) and not the rail
+  const rail = cityRail.getBoundingClientRect();
+  const target = btn.getBoundingClientRect();
+  const delta = (target.left + target.width / 2) - (rail.left + rail.width / 2);
+  cityRail.scrollTo({
+    left: cityRail.scrollLeft + delta,
+    // Animate only once the rail has been seen, so the first call lands in
+    // place instead of sliding in from the left. A hidden page is the other
+    // instant case: Chrome drops smooth-scroll animations there, which would
+    // leave the rail stuck at the old city.
+    behavior: railSettled && document.visibilityState === 'visible'
+      ? 'smooth' : 'auto'
+  });
+  railSettled = true;
+}
+
 function setActive(index, playNow) {
   currentIndex = index;
   isPlaying = playNow;
   upgradeNeighbourhood(index);
   scenes.forEach((s, i) => s.classList.toggle('is-active', i === index));
-  dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+  railCities.forEach((b, i) => b.classList.toggle('is-active', i === index));
+  railPos.textContent = index + 1;
+  centreRail(index);
 
   const s = scenes[index];
   npTitle.textContent = s.dataset.song;
@@ -96,8 +124,8 @@ function goTo(index, playNow) {
 document.getElementById('prevBtn').addEventListener('click', () => goTo(currentIndex - 1, true));
 document.getElementById('nextBtn').addEventListener('click', () => goTo(currentIndex + 1, true));
 
-dots.forEach(dot => {
-  dot.addEventListener('click', () => goTo(parseInt(dot.dataset.index, 10), true));
+railCities.forEach(btn => {
+  btn.addEventListener('click', () => goTo(parseInt(btn.dataset.index, 10), true));
 });
 
 document.addEventListener('keydown', (e) => {
