@@ -10,18 +10,24 @@ hero photos, which cover the whole viewport and then run through the posterize
 filter, so every soft pixel gets banded into mush. That is the "images quality
 blur" complaint.
 
-Two hard constraints on what can be asked for:
+Three things govern what can be asked for:
 
 1. Wikimedia only serves hotlinked thumbnails at the standard widths in
    STANDARD_WIDTHS. Any other width is rejected with a 400 ("Use thumbnail
    sizes listed on https://w.wiki/GHai"), not quietly rounded, so a request for
    640px yields a broken image. See MediaWiki's $wgThumbnailSteps and T414805.
-2. A thumbnail wider than the source is never generated.
+2. A width above the source is served, by upscaling. That adds bytes and never
+   adds detail, so it is worth avoiding, but it does not break.
+3. Original files (the /commons/ path without /thumb/) must not be linked.
+   Thumbnails are CDN-cached and answer reliably; originals are rate-limited
+   and return 429 to hotlinkers, browser User-Agent or not.
 
-So every requested width is snapped DOWN to a standard size that the source can
-actually fill. Where snapping down would waste a lot of a small source (a 958px
-original dropping to the 500px step), the original file is linked instead,
-which is both sharper and, at these dimensions, no heavier.
+So a request is capped at the detail the source actually holds, and then
+rounded UP to the next standard step. Rounding up rather than down matters: a
+200px source asked for at the 120px step would throw away real detail, while
+serving it at 250px keeps all of it. The srcset descriptor reports the source's
+true width, not the step, so the browser is never told an upscale is sharper
+than it is.
 """
 import re
 import urllib.parse
@@ -31,11 +37,6 @@ from image_sizes import SOURCE_WIDTHS
 # $wgThumbnailSteps in Wikimedia production. Direct/hotlinked requests for any
 # other width are rejected outright.
 STANDARD_WIDTHS = (20, 40, 60, 120, 250, 330, 500, 960, 1280, 1920, 3840)
-
-# Below this, linking the original file instead of a thumbnail is worth it when
-# the standard ladder would round the source down. Above it, originals are
-# multi-megabyte camera JPEGs and never worth serving.
-ORIGINAL_MAX_WIDTH = 960
 
 THUMB_RE = re.compile(
     r'^(?P<base>https://upload\.wikimedia\.org/wikipedia/commons/thumb/'
@@ -54,52 +55,42 @@ def _parts(url):
     return m.group("base"), m.group("tail"), width
 
 
-def _snap(width):
-    """Largest standard width that is <= `width`."""
-    usable = [w for w in STANDARD_WIDTHS if w <= width]
-    return usable[-1] if usable else STANDARD_WIDTHS[0]
-
-
-def _original(base):
-    """The full-size file, i.e. the thumb URL with the /thumb/ segment gone."""
-    return base.replace("/wikipedia/commons/thumb/", "/wikipedia/commons/", 1)
+def _step_at_or_above(width):
+    """Smallest standard width that is >= `width`, so no detail is dropped."""
+    for step in STANDARD_WIDTHS:
+        if step >= width:
+            return step
+    return STANDARD_WIDTHS[-1]
 
 
 def effective_width(url, width):
-    """The pixel width `thumb(url, width)` will actually deliver."""
+    """The real detail `thumb(url, width)` carries, for the srcset descriptor.
+
+    Capped by the source: asking for more than the file holds returns an
+    upscale, which is not worth describing as extra resolution.
+    """
     parts = _parts(url)
     if parts is None:
         return width
     _, _, source_width = parts
-    if width >= source_width:
-        return source_width
-    snapped = _snap(width)
-    if source_width <= ORIGINAL_MAX_WIDTH and source_width > snapped:
-        return source_width
-    return snapped
+    return min(width, source_width)
 
 
 def thumb(url, width):
-    """`url` re-pointed at the best size that is <= `width` and really served."""
+    """`url` re-pointed at the smallest standard step that keeps all the detail."""
     parts = _parts(url)
     if parts is None:
         return url
-    base, tail, source_width = parts
-    if width >= source_width:
-        return _original(base) if source_width <= ORIGINAL_MAX_WIDTH \
-            else f"{base}/{_snap(source_width)}px-{tail}"
-    snapped = _snap(width)
-    if source_width <= ORIGINAL_MAX_WIDTH and source_width > snapped:
-        return _original(base)
-    return f"{base}/{snapped}px-{tail}"
+    base, tail, _ = parts
+    return f"{base}/{_step_at_or_above(effective_width(url, width))}px-{tail}"
 
 
 def candidates(url, widths):
     """(url, real width) per distinct size this file can serve, smallest first.
 
-    Sizes that collapse onto the same delivered width, because the ladder
-    snapped them together or the source ran out, are de-duplicated, so a 316px
-    original contributes one candidate rather than four identical ones.
+    Sizes that collapse onto the same width, because the source ran out before
+    the requested size did, are de-duplicated, so a 316px source contributes
+    one candidate rather than four identical ones.
     """
     seen, out = set(), []
     for w in sorted(widths):
