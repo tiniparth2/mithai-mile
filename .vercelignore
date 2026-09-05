@@ -1,0 +1,4 @@
+# The build pipeline is not part of the site. index.html is generated from it
+# and committed, so nothing here needs to ship, and build/*.py was being served
+# publicly before this file existed.
+build/
